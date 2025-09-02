@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/aikbd_white">
+
+    <RelativeLayout
+        android:id="@+id/top_layer"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/aikbd_ico_32_arrow_left" />
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="미션참여"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progressBackgroundTint="@color/white"
+        android:progressTint="#fe0955"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/top_layer"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/top_layer"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_reward"/>
+
+    <FrameLayout
+        android:id="@+id/popupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_get_reward"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#bbbbbb"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:enabled="true">
+
+        
+        <TextView
+            android:id="@+id/txt_get_reward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="적립하기"
+            android:textColor="#ffffff"
+            android:textSize="14dp"/>
+
+        <RelativeLayout
+            android:id="@+id/timer_layer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="15dp"
+            android:padding="5dp"
+            android:background="@drawable/aikbd_timer_bg"
+            android:layout_marginLeft="20dp">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:background="@drawable/aikbd_ico_timer"
+                android:layout_centerVertical="true"
+                android:id="@+id/ico_timer"/>
+
+            <ProgressBar
+                android:id="@+id/count_progressbar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:indeterminate="false"
+                android:max="5"
+                android:progress="5"
+                android:progressDrawable="@drawable/keyboard_countdown_progressbar" />
+
+            <TextView
+                android:id="@+id/count_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/ico_timer"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"
+                android:textColor="#ffffff"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="5초" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txt_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layer"
+        android:padding="15dp"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:textColor="#ffffff"
+        android:background="#99000000"
+        android:includeFontPadding="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

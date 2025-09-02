@@ -1,0 +1,128 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!--<dimen name="aikbd_s_key_height">45dip</dimen>-->
+    <!-- <dimen name="aikbd_num_key_height">37dip</dimen> -->
+    <dimen name="aikbd_keyboard_vertical_gap">2.5dp</dimen>
+<!--    <dimen name="aikbd_key_height">56dip</dimen>-->
+    <dimen name="aikbd_key_height">52.5dip</dimen>
+    <dimen name="aikbd_key_preview_height">56dip</dimen>
+    <dimen name="aikbd_key_qt_height">49.5dip</dimen>
+    <dimen name="aikbd_s_key_height">40dip</dimen>
+    <dimen name="aikbd_num_key_height">32dip</dimen>
+    <dimen name="aikbd_q_keyboard_gap">6dip</dimen>
+
+    <dimen name="aikbd_candidate_font_height">16sp</dimen>
+    <dimen name="aikbd_candidate_vertical_padding">6sp</dimen>
+    <dimen name="aikbd_keyboard_height">180dip</dimen>
+    <!--<dimen name="aikbd_ad_height">45dp</dimen>-->
+    <!--<dimen name="aikbd_ad_height_1">46dp</dimen>-->
+    <!-- 상단 tap 영역을 50 dp로 변경함 2018.01.18 -->
+    <dimen name="aikbd_ad_height">41dp</dimen>
+    <dimen name="aikbd_ad_height_1">42dp</dimen> <!-- ocb 요청으로 높이 42로 변경 -->
+    <dimen name ="aikbd_top_height">51dp</dimen>
+    <dimen name="aikbd_keyboard_top_line">1dp</dimen>
+    <dimen name="aikbd_search_text_size">13dp</dimen>
+    <dimen name="aikbd_item_margin">2dp</dimen>
+
+    <dimen name="aikbd_key_text_size0_n">18.8dp</dimen>
+    <dimen name="aikbd_key_text_size1_n">19dp</dimen>
+    <dimen name="aikbd_key_text_size2_n">19.2dp</dimen>
+    <dimen name="aikbd_key_text_size3_n">19.4dp</dimen>
+    <dimen name="aikbd_key_text_size4_n">19.6dp</dimen>
+    <dimen name="aikbd_key_text_size5_n">19.8dp</dimen>
+    <dimen name="aikbd_key_text_size6_n">20dp</dimen>
+    <dimen name="aikbd_key_text_size7_n">20.2dp</dimen>
+    <dimen name="aikbd_key_text_size8_n">20.4dp</dimen>
+    <dimen name="aikbd_key_text_size9_n">20.6dp</dimen>
+    <dimen name="aikbd_key_text_size10_n">20.8dp</dimen>
+    <dimen name="aikbd_key_text_size11_n">21dp</dimen>
+
+    <dimen name="aikbd_key_text_size0">20.8dp</dimen>
+    <dimen name="aikbd_key_text_size1">21dp</dimen>
+    <dimen name="aikbd_key_text_size2">21.2dp</dimen>
+    <dimen name="aikbd_key_text_size3">21.4dp</dimen>
+    <dimen name="aikbd_key_text_size4">21.6dp</dimen>
+    <dimen name="aikbd_key_text_size5">21.8dp</dimen>
+    <dimen name="aikbd_key_text_size6">22dp</dimen>
+    <dimen name="aikbd_key_text_size7">22.2dp</dimen>
+    <dimen name="aikbd_key_text_size8">22.4dp</dimen>
+    <dimen name="aikbd_key_text_size9">22.6dp</dimen>
+    <dimen name="aikbd_key_text_size10">22.8dp</dimen>
+    <dimen name="aikbd_key_text_size11">23dp</dimen>
+
+    <dimen name="aikbd_key_text_size0_d">24.8dp</dimen>
+    <dimen name="aikbd_key_text_size1_d">25dp</dimen>
+    <dimen name="aikbd_key_text_size2_d">25.2dp</dimen>
+    <dimen name="aikbd_key_text_size3_d">25.4dp</dimen>
+    <dimen name="aikbd_key_text_size4_d">25.6dp</dimen>
+    <dimen name="aikbd_key_text_size5_d">25.8dp</dimen>
+    <dimen name="aikbd_key_text_size6_d">26dp</dimen>
+    <dimen name="aikbd_key_text_size7_d">26.2dp</dimen>
+    <dimen name="aikbd_key_text_size8_d">26.4dp</dimen>
+    <dimen name="aikbd_key_text_size9_d">26.6dp</dimen>
+    <dimen name="aikbd_key_text_size10_d">26.8dp</dimen>
+    <dimen name="aikbd_key_text_size11_d">27dp</dimen>
+
+    <dimen name="aikbd_key_opt_text_size_d">12dp</dimen>
+    <dimen name="aikbd_key_opt_text_size">11dp</dimen>
+    <!--
+    <dimen name="aikbd_key_text_size0">17dp</dimen>
+    <dimen name="aikbd_key_text_size1">17.2dp</dimen>
+    <dimen name="aikbd_key_text_size2">17.4dp</dimen>
+    <dimen name="aikbd_key_text_size3">17.6dp</dimen>
+    <dimen name="aikbd_key_text_size4">17.8dp</dimen>
+    <dimen name="aikbd_key_text_size5">18dp</dimen>
+    <dimen name="aikbd_key_text_size6">25.2dp</dimen>
+    <dimen name="aikbd_key_text_size7">18.4dp</dimen>
+    <dimen name="aikbd_key_text_size8">18.6dp</dimen>
+    <dimen name="aikbd_key_text_size9">18.8dp</dimen>
+    <dimen name="aikbd_key_text_size10">19dp</dimen>
+    <dimen name="aikbd_key_text_size11">19.2dp</dimen>
+    <dimen name="aikbd_key_text_size12">19.4dp</dimen>
+    <dimen name="aikbd_key_text_size13">19.6dp</dimen>
+
+    <dimen name="aikbd_key_opt_text_size0">10.5dp</dimen>
+    <dimen name="aikbd_key_opt_text_size1">10.6dp</dimen>
+    <dimen name="aikbd_key_opt_text_size2">10.7dp</dimen>
+    <dimen name="aikbd_key_opt_text_size3">10.8dp</dimen>
+    <dimen name="aikbd_key_opt_text_size4">10.9dp</dimen>
+    <dimen name="aikbd_key_opt_text_size5">11dp</dimen>
+    <dimen name="aikbd_key_opt_text_size6">18.1dp</dimen>
+    <dimen name="aikbd_key_opt_text_size7">11.2dp</dimen>
+    <dimen name="aikbd_key_opt_text_size8">11.3dp</dimen>
+    <dimen name="aikbd_key_opt_text_size9">11.4dp</dimen>
+    <dimen name="aikbd_key_opt_text_size10">11.5dp</dimen>
+
+    <dimen name="aikbd_key_opt_text_size11">11.6dp</dimen>
+    <dimen name="aikbd_key_opt_text_size12">11.7dp</dimen>
+    <dimen name="aikbd_key_opt_text_size13">11.8dp</dimen>
+-->
+    <dimen name="aikbd_key_opt_text_padding">15dp</dimen>
+    <dimen name="aikbd_long_key_image_size">9dp</dimen>
+    <dimen name="aikbd_key_gap">2dp</dimen>
+
+    <dimen name="aikbd_emoticon_size">25dp</dimen>
+
+    <dimen name="aikbd_btn_text_size">15dp</dimen>
+    <dimen name="aikbd_explain_text_size">15dp</dimen>
+    <dimen name="aikbd_title_text_size">19dp</dimen>
+    <dimen name="aikbd_keyboard_top_padding">3dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="item_margin">2dp</dimen>
+    <dimen name="keyboard_text_small">11.8dp</dimen>
+    <dimen name="keyboard_text_large">19.6dp</dimen>
+
+    <!-- mobon sdk -->
+
+    <dimen name="mobon_banner_width">320dp</dimen>
+    <dimen name="mobon_banner_width_300">300dp</dimen>
+    <dimen name="mobon_banner_height_50">50dp</dimen>
+    <dimen name="mobon_banner_height_60">60dp</dimen>
+    <dimen name="mobon_banner_height_100">100dp</dimen>
+    <dimen name="mobon_banner_height_250">250dp</dimen>
+
+
+</resources>

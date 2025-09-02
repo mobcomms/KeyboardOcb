@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="65dp"
+    android:layout_height="67dp"
+    tools:context="com.enliple.keyboard.ui.ckeyboard.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:background="@drawable/overlay_white_circle_bg">
+
+        <ImageView
+            android:id="@+id/btn_img"
+            android:layout_width="63dp"
+            android:layout_height="63dp"
+            android:layout_centerInParent="true"
+            android:elevation="10dp"
+            android:filterTouchesWhenObscured="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_point"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/aikbd_ocb_point_bg"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        tools:text="1P"
+        android:textSize="11dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:includeFontPadding="false"/>
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="8.5%p">
+
+    <Row android:keyHeight="@dimen/aikbd_key_height"  android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_keyboard_vertical_gap" >
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="11.8%p"/>
+        <Key android:codes="-992" android:keyIcon="@drawable/aikbd_btn_emoticon_latest" />
+        <Key android:codes="-993" android:keyLabel="😀" android:keyWidth="8.5%p"/>
+        <Key android:codes="-994" android:keyLabel="🐶" android:keyWidth="8.5%p"/>
+        <Key android:codes="-995" android:keyLabel="🍏" android:keyWidth="8.5%p"/>
+        <Key android:codes="-996" android:keyLabel="⚽" android:keyWidth="8.5%p"/>
+        <Key android:codes="-997" android:keyLabel="🚗" android:keyWidth="8.5%p"/>
+        <Key android:codes="-998" android:keyLabel="⌚" android:keyWidth="8.5%p"/>
+        <Key android:codes="-999" android:keyLabel="❤" android:keyWidth="8.5%p"/>
+        <Key android:codes="-1000" android:keyLabel="🏳️" android:keyWidth="8.5%p"/>
+        <!--<Key android:codes="-999" android:keyLabel=","/>-->
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:keyWidth="11.8%p" android:keyEdgeFlags="right"
+            android:isRepeatable="true"/>
+    </Row>
+
+</Keyboard>

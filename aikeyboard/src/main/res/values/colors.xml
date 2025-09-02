@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="aikbd_candidate_normal">#FF000000</color>
+    <color name="aikbd_candidate_recommended">#FFE35900</color>
+    <color name="aikbd_candidate_other">#ff808080</color>
+    <color name="aikbd_candidate_background">#bbffffff</color>
+    <color name="aikbd_keyboard_background">#aaffffff</color>
+    <color name="aikbd_white">#ffffffff</color>
+    <color name="aikbd_black">#000000</color>
+    <color name="aikbd_holo_blue">#33B5E5</color>
+    <color name="aikbd_blue">#0000ff</color>
+    <color name="aikbd_pager_color">#CECECE</color>
+    <color name="aikbd_hint_color">#afafaf</color>
+
+    <color name="aikbd_new_category_text_selected">#ffffff</color>
+    <color name="aikbd_new_category_text_unselected">#aaaaaa</color>
+
+    <color name="aikbd_light_green">#74bc20</color>
+    <color name="aikbd_explain_text_color">#444</color>
+    <color name="aikbd_progressbar_base">#e5e5e5</color>
+    <color name="aikbd_progressbar_ocb_base">#f4f4f4</color>
+    <color name="aikbd_light_gray">#ccc</color>
+    <color name="aikbd_dark_gray">#505050</color>
+    <color name="aikbd_gray">#5c5c5c</color>
+    <color name="aikbd_gray2">#aaaaaa</color>
+
+    <color name="aikbd_light_blue">#1a9ff9</color>
+    <color name="aikbd_progress_blue">#a7c8ff</color>
+    <color name="aikbd_ocb_progress_red">#fe0955</color>
+    <color name="aikbd_negative_gray">#868686</color>
+    <color name="aikbd_bg_gray">#e2e2e2</color>
+    <color name="aikbd_light_blue_1">#6892d5</color>
+    <color name="aikbd_setting_line">#eee</color>
+    <color name="aikbd_setting_item_title_off">#555555</color>
+
+    <color name="aikbd_keyboard_theme_0_nor_btn_color">#ee000000</color>
+    <color name="aikbd_keyboard_theme_0_sp_btn_color">#FF000000</color>
+
+
+    <color name="aikbd_keyboard_theme_2_bg">#b4e9ff</color>
+
+    <color name="aikbd_memo_hint">#aaa9a9</color>
+    <color name="aikbd_btn_blue">#186ae4</color>
+    <color name="aikbd_dark_gray1">#333333</color>
+    <color name="aikbd_light_gray4">#999999</color>
+    <color name="aikbd_line_color">#efefef</color>
+    <color name="aikbd_setting_btn_select_on">#edf3fb</color>
+    <color name="aikbd_bg_color">#f2f2f2</color>
+    <color name="aikbd_line_gray">#d9d9d9</color>
+    <color name="aikbd_main_btn_bg">#11329d</color>
+
+    <color name="ad_del_bg">#e4e4e4</color>
+    <color name="ad_price">#e41717</color>
+
+    <color name="ad_side_line">#d5d5d5</color>
+    <color name="aikbd_yellow">#ffed26</color>
+    <color name="aikbd_pop_gray">#656565</color>
+
+
+
+    <color name="keyboard_blue">#186ae4</color>
+    <color name="keyboard_blue_whowho">#3883FF</color>
+    <color name="dark_gray">#333333</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red_join">#f45d5d</color>
+    <!--<color name="join_red">#f45d5d</color>-->
+
+</resources>

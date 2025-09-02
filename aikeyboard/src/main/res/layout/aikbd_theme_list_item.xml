@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/image_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/check_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:background="@drawable/aikbd_btn_theme_apply"/>
+
+        <TextView
+            android:id="@+id/used_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            android:background="@drawable/aikbd_btn_theme_choice"/>
+
+
+        <!--<com.enliple.keyboard.cricleprogress.CircleProgressView-->
+            <!--android:id="@+id/circleView"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--CircleProgressView:cpv_autoTextSize="true"-->
+            <!--CircleProgressView:cpv_barColor="@color/aikbd_light_blue"-->
+            <!--CircleProgressView:cpv_barWidth="35dp"-->
+            <!--CircleProgressView:cpv_innerContourSize="0dp"-->
+            <!--CircleProgressView:cpv_maxValue="100"-->
+            <!--CircleProgressView:cpv_outerContourSize="0dp"-->
+            <!--CircleProgressView:cpv_rimColor="@color/aikbd_keyboard_theme_2_bg"-->
+            <!--CircleProgressView:cpv_rimWidth="35dp"-->
+            <!--CircleProgressView:cpv_seekMode="true"-->
+            <!--CircleProgressView:cpv_showUnit="true"-->
+            <!--CircleProgressView:cpv_spinColor="@color/aikbd_light_blue"-->
+            <!--CircleProgressView:cpv_textColor="@color/aikbd_holo_blue"-->
+            <!--CircleProgressView:cpv_textScale="1"-->
+            <!--CircleProgressView:cpv_unit="%"-->
+            <!--CircleProgressView:cpv_unitColor="@color/aikbd_keyboard_theme_2_bg"-->
+            <!--CircleProgressView:cpv_unitPosition="right_top"-->
+            <!--CircleProgressView:cpv_unitScale="1"-->
+            <!--CircleProgressView:cpv_value="10" />-->
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="12dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/aikbd_dark_gray1"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

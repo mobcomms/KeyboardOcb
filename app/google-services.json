@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "143122795072",
+    "firebase_url": "https://cashkeyboard2-66fa0.firebaseio.com",
+    "project_id": "cashkeyboard2-66fa0",
+    "storage_bucket": "cashkeyboard2-66fa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:143122795072:android:c37534bc45fdd662",
+        "android_client_info": {
+          "package_name": "enliple.com.ckeyboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "143122795072-tmlmr4i14ana6td7hrpoiputevmh6bjt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "enliple.com.ckeyboard",
+            "certificate_hash": "de87509cc0a3baa637a8216a21ec4f7f7a16d367"
+          }
+        },
+        {
+          "client_id": "143122795072-hginic1se434n9jc780f29l64jaau2mh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIZle9_uSBHSqSudKSFsV0hJ50h7Pmr74"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "143122795072-hginic1se434n9jc780f29l64jaau2mh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,42 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon_off"
+        android:duration="140"/>
+
+    <item android:drawable="@drawable/aikbd_btn_ppzon_icon"
+        android:duration="140"/>
+
+</animation-list>

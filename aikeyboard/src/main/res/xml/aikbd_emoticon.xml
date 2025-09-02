@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="11%p">
+
+    <Row android:keyHeight="@dimen/aikbd_key_height"  android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_keyboard_vertical_gap" >
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="15%p"/>
+        <Key android:codes="-1001" android:keyIcon="@drawable/aikbd_btn_emoticon_latest" android:keyWidth="10%p"/>
+<!--        <Key android:codes="-1001" android:keyLabel="⟲" android:keyWidth="10%p"/>-->
+        <Key android:codes="-1002" android:keyIcon="@drawable/aikbd_btn_emoticon_1" android:keyWidth="10%p"/>
+        <Key android:codes="-1003" android:keyIcon="@drawable/aikbd_btn_emoticon_2" android:keyWidth="10%p"/>
+        <Key android:codes="-1004" android:keyIcon="@drawable/aikbd_btn_emoticon_3" android:keyWidth="10%p"/>
+        <Key android:codes="-1005" android:keyIcon="@drawable/aikbd_btn_emoticon_4" android:keyWidth="10%p"/>
+        <Key android:codes="-1006" android:keyIcon="@drawable/aikbd_btn_emoticon_5" android:keyWidth="10%p"/>
+        <Key android:codes="-1007" android:keyIcon="@drawable/aikbd_btn_emoticon_6" android:keyWidth="10%p"/>
+        <!--<Key android:codes="-999" android:keyLabel=","/>-->
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:keyWidth="15%p" android:keyEdgeFlags="right"
+            android:isRepeatable="true"/>
+    </Row>
+
+</Keyboard>

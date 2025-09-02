@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp"
+    android:id="@+id/toast_design_root">
+
+    <RelativeLayout
+        android:id="@+id/TextView_toast_design"
+        android:layout_width="310dp"
+        android:layout_height="58dp"
+        android:background="@drawable/aikbd_toast_bg"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/s_point_toast_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/toastStr"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/img"
+                android:layout_centerVertical="true"
+                tools:text="깜짝!포인트 당첨\n키보드 사용 3P"
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

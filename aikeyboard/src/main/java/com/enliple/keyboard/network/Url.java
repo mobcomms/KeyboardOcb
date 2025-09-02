@@ -1,0 +1,169 @@
+package com.enliple.keyboard.network;
+
+public class Url {
+
+    public static final String TEST_DOMAIN = "http://test.cashkeyboard.co.kr/API/";
+//public static final String BASE_URL = DOMAIN + "sdk.php/";
+//public static final String USER_POINT_URL = DOMAIN + "user_point.php/";
+//public static final String API_LIVE_CHECK = DOMAIN + "sdk.php";
+//    public static final String API_QUICK_LINK = DOMAIN + "quick_link.php";
+//    public static final String THEME_LIST = DOMAIN + "theme.php";
+//    public static final String ZERO_POINT_URL = DOMAIN + "zero_point.php";
+
+    public static final String OFFERWALL_FILE_PATH = "https://okcashbag.cashkeyboard.co.kr/img/offerwall/";
+
+    public static final String BASE_URL = "sdk.php/";
+    public static final String API_LIVE_CHECK = "sdk.php";
+    public static final String API_QUICK_LINK = "quick_link.php";
+    public static final String THEME_LIST = "theme.php";
+    public static final String NEW_THEME_LIST = "theme_cate.php";
+    //public static final String OCB_THEME_LIST = "OCB/theme_cate.php"; // 오퍼월테마 이전에 사용하던 API
+    public static final String OCB_OFFERWALL_THEME = "OCB/theme_offerwall.php";
+    public static final String ZERO_POINT_URL = "zero_point.php";
+    public static final String SEND_KEYWORD_URL = "push_key.php";
+    public static final String CHARGE_POINT = "accumulate.php";
+    public static final String BASE_POINT = "base_point.php";
+    public static final String KEYWORD_AD_URL = "ad_key.php";
+    public static final String URL_AD_RATE = "ad_rate.php";
+    public static final String URL_THEME_DOWN = "theme_down.php";
+    public static final String POP_AD_URL = "ad_pop.php";
+    public static final String OCB_DAY_STATS = "OCB/ocb_day_stats.php";
+    public static final String OCB_DAY_STATS_V2 = "OCB/ocb_day_stats_v2.php";
+    public static final String THEME_POPULAR = "theme_popular.php";
+    public static final String OCB_UPDATE_USER_INFO = "OCB/update_user_info.php";
+    public static final String OCB_GET_MY = "OCB/get_user_info_v4.php";
+    public static final String OCB_SAVE_POINT = "OCB/send_point.php";
+    public static final String OCB_SAVE_POINT_V2 = "OCB/send_point_v2.php"; // offerwall_show 추가 버전
+
+    public static final String OCB_SAVE_POINT2 = "OCB/send_point2.php";
+    public static final String OCB_OLABANG_LIST = "OCB/get_streaming.php";
+    public static final String OCB_OLABANG_LIST_V2 = "OCB/get_streaming_v2.php";
+    public static final String OCB_SEARCH_LIST = "OCB/get_search.php";
+    public static final String OCB_TIME_DEAL_LIST = "OCB/get_timedeal.php";
+    //public static final String OCB_AD_FREQNEUCY = "OCB/get_ad_frequency.php";
+    public static final String OCB_AD_FREQNEUCY = "OCB/get_ad_frequency_v3.php";
+    public static final String OCB_BRAND_AD = "OCB/get_brand.php";
+    public static final String OCB_BANNER_AD = "OCB/get_banner.php";
+    public static final String OCB_BANNER_AD_V2 = "OCB/get_banner_v2.php";
+    //    public static final String BASE_URL = "http://keyboard.baroo.co.kr/api/sdk.php/";
+    //public static final String DOMAIN = "https://api.cashkeyboard.co.kr/API/";
+
+    public static final String FORMISSION_DOMAIN = "https://api.pomission.com/api";
+
+    public static final String DOMAIN = "https://ocbapi.cashkeyboard.co.kr/API/";
+
+    public static final String OCB_TEST_DOMAIN = "http://devapi.cashkeyboard.co.kr:8000/API/";
+    public static final String OCB_TOKEN = "OCB/get_token.php";
+    public static final String OCB_TOTAL_POINT = "OCB/get_user_total_point.php";
+    public static final String OCB_USER_CHECK_POINT = "OCB/get_user_chk_point_v2.php";
+    public static final String OCB_ONE_POINT = "OCB/set_one_point_v2.php";
+    public static final String OCB_USER_INFO = "OCB/set_user_info.php";
+    public static final String OCB_PROMOTION = "OCB/get_promotion.php";
+    public static final String OCB_SURPRISE_LIST = "OCB/get_spot_point_v2.php";
+    public static final String OCB_SEND_SPOT_POINT = "OCB/send_spot_point.php";
+    public static final String OCB_NEWS = "OCB/get_news.php";
+    public static final String OCB_NEWS_NEW = "OCB/get_news_v2.php";
+    public static final String OCB_NEWS_ARRAY = "OCB/get_news_v4.php";
+    public static final String OCB_NEWS_VIEWCOUNT = "OCB/get_news_view.php";
+    public static final String OCB_TYPING_GAME = "OCB/get_typing_game.php";
+    public static final String OCB_SHOPPING_LIST = "OCB/get_shopping.php";
+    public static final String OCB_NOTI_TIME = "OCB/get_notification.php ";
+    public static final String OCB_NOTI_NEWS_DATA = "OCB/get_notification_data.php";
+    public static final String OCB_SAVE_NOTI_POINT = "OCB/get_notification_send.php";
+    public static final String OCB_BANNER_POINT_INFO = "OCB/get_reward_frequency.php";
+    public static final String OCB_SET_BANNER_POINT = "OCB/set_reward_point.php";
+//    public static final String URL_STORE_LIST = "http://shoppul.com/screen/api/wincube_list_1.php"; // user 별 list를 다르게 받기 위해(문상 적용)
+//    public static final String URL_GET_COUPON = "http://shoppul.com/screen/api/wincube_request_1.php"; // (문상 적용)
+//    public static final String URL_TOTAL_CPI_LIST = "http://shoppul.com/screen/api/total_list.php"; // 적립의 cpi 리스트 받아오는데 사용
+//    public static final String URL_REWORD_TRY_TEST = "http://www.shoppul.com/screen/api/reward_view_test.php"; // 적립의 reword 참여에 사용
+//    public static final String URL_REWORD_REQUIRED = "http://www.shoppul.com/screen/api/reward_complete_test.php";
+//    public static final String URL_ADPOPCORN_TRY_ = "http://shoppul.com/screen/api/adpopcon_view.php"; // 적립의 adpopcorn 참여에 사용
+//    public static final String URL_ADPOPCORN_REQUIRE = "http://shoppul.com/screen/api/adpopcon_complete.php"; // 적립의 adpopcorn 참여완료에 사용
+//    public static final String URL_COUPON_LIST = "http://shoppul.com/screen/api/wincube_coupon_detail_v1.php"; // 스토어에서  내가 구매한 쿠폰 목록 가져옴
+//    public static final String URL_FQ_LIST = "http://shoppul.com/screen/api/faq_list_new.php"; // faq 목록 가져옴
+//    public static final String URL_NEW_NOTICE = "http://www.shoppul.com/screen/api_key/notice_v2.php"; // 공지팝업
+//    public static final String URL_VERSION_INFO = "http://shoppul.com/screen/api_key/version_info.php"; // 버전 정보 등 앱 기본정보 가져옴
+//    public static final String URL_QA_LIST = "http://shoppul.com/screen/api/qnalist.php"; // QA 목록
+//    public static final String URL_QA_WRITE = "http://shoppul.com/screen/api/qnainsert.php"; // QA 글쓰기
+//    public static final String URL_QA_REPLY_LIST = "http://shoppul.com/screen/api/qnaview.php"; // QA 댓글 목록
+//    public static final String URL_QA_DELETE = "http://shoppul.com/screen/api/qnadel.php"; // QA 글 삭제
+//    public static final String URL_MEMBER_OUT = "http://shoppul.com/screen/api/secession.php"; // 회원 탈퇴
+    public static final String WHOWHO = "https://api.cashkeyboard.co.kr/API/";
+
+    public static final String URL_DOCS = "inc/company.json";
+    public static final String URL_TUTORIAL_LIST = "tutorial_list_new.php";
+    public static final String URL_VERSION_INFO = "version_info.php";
+    public static final String URL_MAIN_V1 = "main_v1.php";
+    public static final String URL_ID_CHECK = "id_check.php";
+    //    public static final String URL_JOIN_MEMBER =  "register.php";
+//public static final String URL_JOIN_MEMBER = "register_new.php";
+    public static final String URL_JOIN_MEMBER = "register_new_all.php"; // 2018.08.31 회원가입 하나로 합치면서 새로 api 만듬.
+    public static final String URL_LOGIN = "login.php";
+    public static final String URL_GET_USER_INFO = "myinfo.php";
+    public static final String URL_MY_PAGE = "mypage.php";
+    public static final String URL_PWD_RESET = "pwd_reset.php";
+    public static final String URL_RANKING = "grade.php";
+    public static final String URL_SAVING_LIST = "mypage_accml.php";
+    public static final String URL_SAVING_LIST_DETAIL = "mypage_accml_detail.php";
+    public static final String URL_REC_DETAIL = "mypage_recom.php";
+    public static final String URL_GET_REC_ID = "mypage_recom_code.php";
+    public static final String URL_MEMBER_OUT = "secession.php"; // 회원 탈퇴
+    public static final String URL_STORE_LIST = "wincube_list_1.php";// user 별 list를 다르게 받기 위해(문상 적용)
+    public static final String URL_COUPON_LIST = "wincube_coupon_detail_v1.php"; // 스토어에서  내가 구매한 쿠폰 목록 가져옴
+    public static final String URL_GET_COUPON = "wincube_request_1.php"; // (문상 적용)
+    public static final String URL_TOTAL_CPI_LIST = "reward_list.php"; // retention 관련 변경으로 total_list_new.php에서 reward_list.php로 변경됨(2018.02.07
+    public static final String URL_REWORD_TRY_TEST = "reward_view_new.php"; // db를 분기 작업
+
+    public static final String URL_TOTAL_CPI_LIST_TEST = "total_list_test.php"; // db를 분기 작업
+    public static final String URL_REWORD_TRY_TEST_TEST = "reward_view_test.php"; // db를 분기 작업
+    public static final String URL_REWORD_REQUIRED_TEST = "reward_complete_test.php";
+    public static final String URL_ADPOPCORN_TRY_ = "adpopcon_view.php"; // 적립의 adpopcorn 참여에 사용
+    public static final String URL_REWORD_REQUIRED = "reward_complete.php";
+    public static final String URL_ADPOPCORN_REQUIRE = "adpopcon_complete.php"; // 적립의 adpopcorn 참여완료에 사용
+    public static final String URL_NEW_NOTICE = "popup_list.php"; // 공지팝업
+
+    public static final String URL_QA_LIST = "qnalist.php"; // QA 목록
+    public static final String URL_QA_WRITE = "qnainsert.php"; // QA 글쓰기
+    public static final String URL_QA_REPLY_LIST = "qnaview.php"; // QA 댓글 목록
+    public static final String URL_QA_DELETE = "qnadel.php"; // QA 글 삭제
+    public static final String URL_FQ_LIST = "faq_list_new.php"; // faq 목록 가져옴
+    public static final String USER_POINT_URL = "user_point.php/";
+    //    public static final String URL_AUTH_NO = "register_01.php";
+    public static final String URL_AUTH_NO = "register_new_01.php";
+    public static final String API_KEYBOARD_AD = "http://www.mediacategory.com/servlet/adbnSdkApi";
+    public static final String API_MATCHED_EMOJI = "http://shoppul.com/screen/api/maintenance/maintenance.php";
+    public static final String URL_SEND_CPI_MAIL = "send_cpi_mail.php";
+    public static final String URL_NO_HISTORY = "feedback.php";
+    public static final String URL_NOT_INSTALLED = "feedback_notinstall.php";
+    public static final String URL_FIND_ID = "id_check2.php";
+    public static final String URL_UPDATED_INFO = "version_update.php";
+    public static final String URL_PUSH_CLICK = "push_click.php";
+    public static final String URL_CONFIG = "config.php";
+    public static final String URL_PUSH_STATUS = "push_status.php";
+    public static final String URL_AD_CLICK = "ad_click.php";
+    public static final String URL_AD_POINT = "ad_point.php";
+    public static final String URL_SHOPTREE_LIST = "ST/Products.php";
+    public static final String URL_SHOPTREE_ORDERS = "ST/Orders.php";
+    public static final String URL_SHOPTREE_GO_CART = "ST/Carts.php";
+    public static final String URL_SHOPTREE_COMPLANE = "ST/Complaints.php";
+
+    public static final String OCB_COUPANG_AD_DATA = "OCB/get_coupang_reco.php";
+    public static final String OCB_SEND_REWARD_POINT = "OCB/send_reward_point.php";
+    public static final String OCB_REWARD_SC = "OCB/get_reward_check.php";
+    public static final String OCB_REWARD_POSSIBLE = "OCB/get_reward_check_point.php";
+    public static final String OCB_MONEYTREE_AD = "thezooom/get_item_list.php";
+    public static final String OCB_GET_REWARD_NEWS = "OCB/get_reward_news.php";
+    public static final String OCB_GET_CRITEO_AD = "OCB/get_criteo.php";
+    public static final String OCB_AD_MIXER = "OCB/get_mixer.php?sspNo=639_320_50";
+    public static final String OCB_JOINT_REWARD_AD = "OCB/get_reward_ads.php";
+    public static final String OCB_DAY_STATS_POINT = "OCB/ocb_day_stats_spot.php";
+    public static final String OCB_NEW_REWARD_POSSIBLE = "OCB/get_reward_zone.php";
+    public static final String OCB_NEW_REWARD_WITH_BRAND_POSSIBLE = "OCB/get_reward_zone_v2.php";
+    public static final String OCB_NEW_REWARD_SEND_POINT = "OCB/send_reward_zone_point.php";
+    public static final String OCB_SEND_BRAND_POINT = "OCB/send_reward_zone_point_v2.php";
+    public static final String OCB_GET_GPT_TICKET_COUNT = "OCB/get_gpt_use_cnt.php";
+    public static final String OCB_GET_GPT_ANSWER = "OCB/get_gpt_answer.php";
+    public static final String OCB_GET_GPT_CHARGE_TICKET = "OCB/get_gpt_ad_fin.php";
+    public static final String OCB_GET_CHAT_GPT_AD = "OCB/get_gpt_ad.php";
+    public static final String OCB_GET_GAME_URL = "OCB/get_game_url.php";
+}

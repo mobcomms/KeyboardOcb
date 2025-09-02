@@ -1,0 +1,1899 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/aikbd_white">
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/keyboard_layer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            tools:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/only_keyboard_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:paddingTop="@dimen/aikbd_keyboard_top_padding">
+
+                <com.enliple.keyboard.activity.LatinKeyboardView
+                    android:id="@+id/keyboard_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/aikbd_key_height"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00ffffff"
+                    android:keyPreviewHeight="@dimen/aikbd_key_preview_height"
+                    android:keyPreviewLayout="@layout/aikbd_preview"
+                    android:popupLayout="@layout/aikbd_keyboard_popup_layout" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/e_keyboard_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/emojiKeyboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></androidx.viewpager.widget.ViewPager>
+
+                <com.enliple.keyboard.activity.LatinKeyboardView
+                    android:id="@+id/e_keyboard_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/aikbd_key_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00ffffff"
+                    android:keyPreviewHeight="@dimen/aikbd_key_preview_height"
+                    android:keyPreviewLayout="@layout/aikbd_preview"
+                    android:popupLayout="@layout/aikbd_keyboard_popup_layout" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/emoticon_keyboard_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/emoticonKeyboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </androidx.viewpager.widget.ViewPager>
+
+                <com.enliple.keyboard.activity.LatinKeyboardView
+                    android:id="@+id/emoticon_keyboard_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/aikbd_key_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00ffffff"
+                    android:popupLayout="@layout/aikbd_keyboard_popup_layout"
+                    android:keyPreviewLayout="@layout/aikbd_preview"
+                    android:keyPreviewHeight="@dimen/aikbd_key_preview_height"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/voice_keyboard_layer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/voice_layer"/>
+
+                <com.enliple.keyboard.activity.LatinKeyboardView
+                    android:id="@+id/v_kayboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/aikbd_key_height"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00ffffff"
+                    android:keyPreviewHeight="@dimen/aikbd_key_preview_height"
+                    android:keyPreviewLayout="@layout/aikbd_preview"
+                    android:popupLayout="@layout/aikbd_keyboard_popup_layout" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/util_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/match_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/aikbd_ad_height_1"
+            android:layout_above="@+id/keyboard_layer">
+
+            <!--<TextView-->
+            <!--android:id="@+id/top_line"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:visibility="gone"-->
+            <!--android:layout_height="@dimen/aikbd_keyboard_top_line"-->
+            <!--android:background="#d9d9d8"/>-->
+
+            <TextView
+                android:id="@+id/top_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentBottom="true" />
+
+            <LinearLayout
+                android:id="@+id/top_tab_layer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/top_line"
+                android:orientation="horizontal">
+                <!--
+                                <RelativeLayout
+                                    android:id="@+id/logo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:soundEffectsEnabled="false">
+
+                                    <ImageView
+                                        android:id="@+id/img_logo"
+                                        android:layout_width="35dp"
+                                        android:layout_height="30dp"
+                                        android:layout_centerInParent="true" />
+
+                                </RelativeLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/first_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_first"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true" />
+
+                    <TextView
+                        android:id="@+id/matched_emoji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textColor="#000000"
+                        android:textSize="24dp" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/timedeal_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_timedeal"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:id="@+id/shopping_tab"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:soundEffectsEnabled="false">
+
+                        <ImageView
+                            android:id="@+id/img_shopping"
+                            android:layout_width="35dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/offerwall_tab"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:soundEffectsEnabled="false">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/aikbd_btn_ppzon_icon_off" />
+
+                        <ImageView
+                            android:id="@+id/img_offerwall"
+                            android:layout_width="35dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/offerwall_badge_animation" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+<!--
+                <RelativeLayout
+                    android:id="@+id/shopping_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_shopping"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+-->
+
+                <RelativeLayout
+                    android:id="@+id/game_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_game"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/aikbd_btn_save_gamezone_icon" />
+
+                </RelativeLayout>
+
+<!--                <RelativeLayout-->
+<!--                    android:id="@+id/chat_tab"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:soundEffectsEnabled="false">-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/img_chat"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_centerInParent="true"-->
+<!--                        android:background="@drawable/aikbd_chat_gpt_normal" />-->
+
+
+<!--                </RelativeLayout>-->
+
+                <RelativeLayout
+                    android:id="@+id/second_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_second"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true" />
+
+                    <View
+                        android:id="@+id/brand_base"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_centerInParent="true" />
+
+                    <TextView
+                        android:id="@+id/brand_badge"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/aikbd_brand_badge"
+                        android:layout_toRightOf="@+id/brand_base"
+                        android:layout_above="@+id/brand_base"
+                        android:includeFontPadding="false"
+                        android:visibility="gone"
+                        android:textSize="10dp"
+                        android:textColor="#ffffff"
+                        tools:text="1P"
+                        android:gravity="center"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fourth_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true">
+
+                        <ImageView
+                            android:id="@+id/img_fourth"
+                            android:layout_width="35dp"
+                            android:layout_height="30dp"
+                            android:layout_centerInParent="true" />
+
+                        <RelativeLayout
+                            android:id="@+id/ocb_point_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@+id/plus"
+                                    android:layout_width="9dp"
+                                    android:layout_height="9dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="1dp"
+                                    android:fontFamily="sans-serif"
+                                    android:background="@drawable/ico_kb_menu_point_plus_icon"/>
+
+                                <TextView
+                                    android:id="@+id/aikbd_ocb_point"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="22dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/plus"
+                                    android:background="@drawable/aikbd_ocb_point_bg"
+                                    android:gravity="center"
+                                    android:fontFamily="sans-serif"
+                                    android:includeFontPadding="false"
+                                    android:minWidth="22dp"
+                                    android:paddingLeft="4dp"
+                                    android:paddingRight="4dp"
+                                    android:textColor="#ffffff"
+                                    android:textSize="11dp"
+                                    tools:text="12P" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/offerwall_point_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:duplicateParentState="false"
+                            android:clickable="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/ocb_offerwall_point"
+                                android:layout_width="34.8dp"
+                                android:layout_height="22.6dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_btn_point_bg_icon"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:textColor="#4d360f"
+                                android:textSize="11dp"
+                                android:textStyle="bold"
+                                tools:text="+100" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/aikbd_txt_point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_above="@+id/base"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="1.5dp"
+                            android:textColor="@color/aikbd_white"
+                            android:textSize="10dp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/base"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/img_fourth" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/more_tab"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_more"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ad_layer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/top_line"
+                android:visibility="gone"
+                android:background="#ff0000">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/ad_del_bg" />
+
+                <RelativeLayout
+                    android:id="@+id/kl_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fafafa"
+                    android:visibility="gone"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:id="@+id/kl_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"/>
+
+                    <RelativeLayout
+                        android:id="@+id/kl_del"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/ad_del_bg">
+
+                            <TextView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_btn_key_close" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/kl_del"
+                        android:layout_toRightOf="@+id/kl_img">
+
+                        <RelativeLayout
+                            android:id="@+id/kl_topline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp">
+
+                            <TextView
+                                android:id="@+id/kl_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="4dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/aikbd_dark_gray1"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:id="@+id/kl_point_layer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/kl_title"
+                                android:background="@drawable/aikbd_img_key_pointbg"
+                                android:paddingLeft="6dp"
+                                android:paddingRight="6dp">
+
+                                <ImageView
+                                    android:id="@+id/kl_point_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/aikbd_img_key_point" />
+
+                                <TextView
+                                    android:id="@+id/kl_point"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_toRightOf="@+id/kl_point_icon"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/aikbd_white"
+                                    android:textSize="10dp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/kl_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/kl_topline"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:textColor="@color/aikbd_setting_item_title_off"
+                            android:textSize="10dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sr_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:paddingLeft="10dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/sr_first_layer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/sr_p_img2_layer">
+
+
+                        <RelativeLayout
+                            android:id="@+id/sr_img_layer"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="8dp">
+
+                            <ImageView
+                                android:id="@+id/sr_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/sr_p_img1_layer"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="6dp"
+                            android:layout_toRightOf="@+id/sr_img_layer"
+                            android:background="@color/ad_side_line"
+                            android:padding="1dp">
+
+                            <ImageView
+                                android:id="@+id/sr_p_img1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/sr_content_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/sr_p_img1_layer">
+
+                            <RelativeLayout
+                                android:id="@+id/sr_topline"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp">
+
+                                <TextView
+                                    android:id="@+id/sr_title"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="4dp"
+                                    android:ellipsize="end"
+                                    android:maxLength="10"
+                                    android:maxLines="1"
+                                    android:textColor="@color/aikbd_dark_gray1"
+                                    android:textSize="12dp"
+                                    android:textStyle="bold" />
+
+                                <RelativeLayout
+                                    android:id="@+id/sr_point_layer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/sr_title"
+                                    android:background="@drawable/aikbd_img_key_pointbg"
+                                    android:paddingLeft="6dp"
+                                    android:paddingRight="6dp">
+
+                                    <ImageView
+                                        android:id="@+id/sr_point_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:src="@drawable/aikbd_img_key_point" />
+
+                                    <TextView
+                                        android:id="@+id/sr_point"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="3dp"
+                                        android:layout_toRightOf="@+id/sr_point_icon"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:textColor="@color/aikbd_white"
+                                        android:textSize="10dp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+                                <!--<TextView-->
+                                <!--android:id="@+id/sr_title"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_centerVertical="true"-->
+                                <!--android:layout_toLeftOf="@+id/sr_point_layer"-->
+                                <!--android:layout_alignParentLeft="true"-->
+                                <!--android:maxLines="1"-->
+                                <!--android:ellipsize="end"-->
+                                <!--android:maxLength="15"-->
+                                <!--android:layout_marginRight="4dp"-->
+                                <!--android:textSize="12dp"-->
+                                <!--android:textStyle="bold"-->
+                                <!--android:textColor="@color/aikbd_dark_gray1"/>-->
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/sr_content"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sr_topline"
+                                android:layout_marginBottom="1dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/aikbd_setting_item_title_off"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:id="@+id/sr_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sr_content"
+                                android:textColor="@color/ad_price"
+                                android:textSize="10dp" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/sr_img_layer"-->
+                    <!--android:layout_width="38dp"-->
+                    <!--android:layout_height="38dp"-->
+                    <!--android:layout_marginRight="8dp"-->
+                    <!--android:layout_centerVertical="true">-->
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/sr_img"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"/>-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:background="@drawable/aikbd_img_key_logo"/>-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/sr_p_img1_layer"-->
+                    <!--android:layout_width="38dp"-->
+                    <!--android:layout_height="38dp"-->
+                    <!--android:layout_marginRight="6dp"-->
+                    <!--android:padding="1dp"-->
+                    <!--android:background="@color/ad_side_line"-->
+                    <!--android:layout_toRightOf="@+id/sr_img_layer"-->
+                    <!--android:layout_centerVertical="true">-->
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/sr_p_img1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"/>-->
+
+                    <!--</RelativeLayout>-->
+
+                    <TextView
+                        android:id="@+id/right_empty"
+                        android:layout_width="21dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true" />
+
+                    <RelativeLayout
+                        android:id="@+id/sr_p_img3_layer"
+                        android:layout_width="44dp"
+                        android:layout_height="38dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/right_empty"
+                        android:paddingLeft="6dp">
+
+                        <RelativeLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:background="@color/ad_side_line"
+                            android:padding="1dp">
+
+                            <ImageView
+                                android:id="@+id/sr_p_img3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sr_p_img2_layer"
+                        android:layout_width="50dp"
+                        android:layout_height="38dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/sr_p_img3_layer"
+                        android:paddingLeft="12dp">
+
+                        <RelativeLayout
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:layout_centerVertical="true"
+                            android:background="@color/ad_side_line"
+                            android:padding="1dp">
+
+                            <ImageView
+                                android:id="@+id/sr_p_img2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/sr_del"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/ad_del_bg">
+
+                            <TextView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_btn_key_close" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ev_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ev_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/ev_del"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@color/ad_del_bg">
+
+                            <TextView
+                                android:layout_width="10dp"
+                                android:layout_height="10dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_btn_key_close" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/ad_del_bg" />
+
+                <!--<ImageView-->
+                <!--android:id="@+id/ad_img"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginLeft="10dp"/>-->
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toRightOf="@+id/ad_img"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_centerVertical="true">-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/ad_title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:maxLines="1"-->
+                <!--android:ellipsize="end"-->
+                <!--android:textColor="@color/aikbd_blue"-->
+                <!--android:textSize="14sp"/>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/ad_txt"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/ad_title"-->
+                <!--android:maxLines="1"-->
+                <!--android:ellipsize="end"-->
+                <!--android:textColor="@color/aikbd_black"-->
+                <!--android:textSize="10sp"/>-->
+
+                <!--</RelativeLayout>-->
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/rl_unsafe_check"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_above="@+id/top_line"
+                android:background="#fafafa"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <ImageView
+                        android:id="@+id/iv_unsafe_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true" />
+
+                    <TextView
+                        android:id="@+id/tv_unsafe_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/iv_unsafe_check"
+                        android:letterSpacing="-0.05"
+                        android:lineSpacingExtra="11dp"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        tools:text="안전한 사용을 위해 URL 주소를 터치해 주세요" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="20dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/shopping_top_layer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_above="@+id/top_line"
+                android:visibility="gone"
+                android:weightSum="6">
+
+                <RelativeLayout
+                    android:id="@+id/shopping_logo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:soundEffectsEnabled="false">
+
+                    <ImageView
+                        android:id="@+id/img_shopping_logo"
+                        android:layout_width="35dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:layout_weight="6">
+
+                    <RelativeLayout
+                        android:id="@+id/closeSearch"
+                        android:layout_width="48dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true">
+
+                        <ImageView
+                            android:id="@+id/img_shopping_close"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/kb_bar_close_icon" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="24dp"
+                        android:layout_toLeftOf="@+id/closeSearch">
+
+                        <EditText
+                            android:id="@+id/editSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:imeOptions="actionSearch"
+                            android:inputType="text"
+                            android:gravity="center|left"
+                            android:background="@drawable/aikbd_search_edit_bg"
+                            android:hint="검색할 상품을 입력해주세요"
+                            android:textColorHint="#868686"
+                            android:textColor="#000000"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:textSize="14dp"
+                            android:includeFontPadding="false">
+
+                            <requestFocus />
+                        </EditText>
+
+                        <RelativeLayout
+                            android:id="@+id/clearText"
+                            android:layout_width="38dp"
+                            android:layout_height="32dp"
+                            android:visibility="gone"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/kb_search_close_icon"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--<HorizontalScrollView-->
+            <!--android:id="@+id/scrollview"-->
+            <!--android:layout_below="@+id/top_line"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/aikbd_white"-->
+            <!--android:visibility="gone"-->
+            <!--android:scrollbars="none">-->
+
+            <!--<LinearLayout-->
+            <!--android:id="@+id/tab_layer"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/aikbd_white"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--</LinearLayout>-->
+
+            <!--</HorizontalScrollView>-->
+            <!-->
+                        <RelativeLayout
+                            android:id="@+id/mobon_ad_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/top_line"
+                            android:visibility="gone"
+                            android:background="#00ffffff"></RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/banner_ad_layer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_above="@+id/top_line"
+                            android:paddingLeft="18dp"
+                            android:paddingRight="14dp"
+                            android:visibility="gone">
+
+                            <ImageView android:id="@+id/bannerImg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_toLeftOf="@+id/bannerClose"
+                                android:scaleType="fitCenter"
+                                android:visibility="gone"/>
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:id="@+id/bannerClose"
+                                android:background="@drawable/aikbd_kb_bar_close_icon"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/bannerTxt"
+                                tools:text="(광고)오늘 명품"
+                                android:textColor="#313131"
+                                android:textSize="13dp"
+                                android:singleLine="true"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:layout_toLeftOf="@+id/bannerClose"
+                                android:layout_marginRight="28dp"/>
+
+
+                        </RelativeLayout>-->
+
+            <View
+                android:id="@+id/topLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#d8d8d8"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/keyboard_top_layer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/aikbd_top_height"
+            android:layout_above="@+id/match_container">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/top_keyboard_line"
+                android:background="#d8d8d8"/>
+
+            <RelativeLayout
+                android:id="@+id/news_ad_layer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/top_keyboard_line"
+                android:background="#ffffff"
+                android:paddingLeft="18dp"
+                android:paddingRight="14dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/newsTxt"
+                    tools:text="(뉴스)'거리두기'완화 하루 앞두고 확진자 794명 급등. 방역당국 비상.내일 거리두기 4단계 진입 검토"
+                    android:textColor="#313131"
+                    android:textSize="15dp"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+                <!-- talkback 설정 시 news 읽는것을 막기 위해 dummy imageview를 위에 두고 여기에 focus를 둬서 여기의 contentDescription이 동작하도록 함 -->
+                <ImageView
+                    android:id="@+id/dummyImage"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:contentDescription=""
+                    android:focusable="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mobon_reward_ad_layer_c"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/top_keyboard_line"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <View
+                        android:id="@+id/r_leftBg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/r_rightBg"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reward_ad_layer"
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:background="#00ffffff">
+
+                    <RelativeLayout
+                        android:id="@+id/mobon_reward_ad_layer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible"
+                        android:background="#00ffffff"/>
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:id="@+id/reward_coupang_layer">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/reward_coupang_image"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/reward_coupang_image">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:id="@+id/coupang_top_margin"/>
+
+                            <TextView
+                                android:id="@+id/coupang_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                                android:textSize="11dp"
+                                android:textColor="#000000"
+                                android:includeFontPadding="false"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0.7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/coupang_price"
+                                    tools:text="12,000원"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    android:textColor="#000000"
+                                    android:textSize="12dp"/>
+
+                                <ImageView
+                                    android:layout_width="46.7dp"
+                                    android:layout_height="11.7dp"
+                                    android:id="@+id/coupang_rocket"
+                                    app:layout_constraintBottom_toBottomOf="@+id/coupang_price"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:layout_marginLeft="4dp"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:id="@+id/reward_joint_layer">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/reward_joint_image"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/reward_joint_image">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:id="@+id/joint_top_margin"/>
+
+                            <TextView
+                                android:id="@+id/joint_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                                android:textSize="11dp"
+                                android:textColor="#000000"
+                                android:includeFontPadding="false"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0.7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/joint_price"
+                                    tools:text="12,000원"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    android:textColor="#000000"
+                                    android:textSize="12dp"/>
+
+                                <ImageView
+                                    android:layout_width="46.7dp"
+                                    android:layout_height="11.7dp"
+                                    android:id="@+id/joint_logo"
+                                    app:layout_constraintBottom_toBottomOf="@+id/joint_price"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:layout_marginLeft="4dp"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/joint_adchoice"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:visibility="gone"
+                        android:id="@+id/reward_joint_banner_layer">
+
+                        <ImageView
+                            android:id="@+id/joint_banner_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/joint_banner_adchoice"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:scaleType="fitStart"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rest_layer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="#00ffffff"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/reward_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/reward_point"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/aikbd_point_badge"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="1P"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mixer_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:visibility="gone"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/mixer_container"
+                        android:layout_centerInParent="true">
+
+
+                    </RelativeLayout>
+                    <!--
+                    <WebView
+                        android:id="@+id/mixer_webview"
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:scrollbars="none"
+                        android:overScrollMode="never"
+                        android:layout_centerInParent="true"/>
+                    -->
+                    <RelativeLayout
+                        android:id="@+id/mixer_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/coupang_dy_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:visibility="gone"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/dy_coupang_image"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/dy_coupang_image">
+
+                            <TextView
+                                android:id="@+id/dy_coupang_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                                android:textSize="11dp"
+                                android:textColor="#000000"
+                                android:includeFontPadding="false"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0.7dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/dy_coupang_price"
+                                    tools:text="12,000원"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    android:textColor="#000000"
+                                    android:textSize="12dp"/>
+
+                                <ImageView
+                                    android:layout_width="46.7dp"
+                                    android:layout_height="11.7dp"
+                                    android:id="@+id/dy_coupang_rocket"
+                                    app:layout_constraintBottom_toBottomOf="@+id/dy_coupang_price"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    android:layout_marginLeft="4dp"/>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dy_coupang_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!-- criteo -->
+                <RelativeLayout
+                    android:id="@+id/criteo_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:visibility="gone"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:background="#ffffff"
+                        android:layout_centerInParent="true">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:id="@+id/criteo_image"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toRightOf="@+id/criteo_image">
+
+                            <TextView
+                                android:id="@+id/criteo_product_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:ellipsize="end"
+                                tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                                android:textSize="11dp"
+                                android:textColor="#000000"
+                                android:includeFontPadding="false"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0.9dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/criteo_price"
+                                    tools:text="12,000원"
+                                    android:textStyle="bold"
+                                    android:includeFontPadding="false"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    android:textColor="#000000"
+                                    android:textSize="12dp"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/criteo_adchoice"
+                            android:layout_width="19dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/criteo_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mobon_ad_layer_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:visibility="gone"
+                    android:background="#00ffffff">
+
+                    <RelativeLayout
+                        android:id="@+id/mobon_ad_layer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:visibility="visible"
+                        android:background="#00ffffff"/>
+
+                    <RelativeLayout
+                        android:id="@+id/ad_del"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:visibility="gone"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+<!--
+                    <RelativeLayout
+                        android:id="@+id/ad_del"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="17dp"
+                            android:layout_height="17dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true">
+
+                            <TextView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" />
+
+                        </RelativeLayout>
+                    </RelativeLayout> -->
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/banner_ad_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:background="#ffffff"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="14dp"
+                    android:visibility="gone">
+
+                    <ImageView android:id="@+id/bannerImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/bannerClose"
+                        android:scaleType="fitCenter"
+                        android:visibility="gone"/>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/bannerClose"
+                        android:background="@drawable/aikbd_kb_bar_close_icon"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/bannerTxt"
+                        tools:text="(광고)오늘 명품"
+                        android:textColor="#313131"
+                        android:textSize="13dp"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:layout_toLeftOf="@+id/bannerClose"
+                        android:layout_marginRight="28dp"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/coupang_ad_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:background="#00ffffff"
+                    android:visibility="gone">
+
+                    <include layout="@layout/view_coupang_ad" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mobwith_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top_keyboard_line"
+                    android:visibility="gone"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:layout_width="320dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/mobwith_container"
+                        android:layout_centerInParent="true">
+
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="12dp">
+
+                        <TextView
+                            android:id="@+id/mobwith_reward_point"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/aikbd_point_badge"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:text="1P"
+                            android:textColor="#ffffff"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:id="@+id/mobwith_non_reward_badge"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/aikbd_badge_point_complete"/>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/mobwith_close"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                            <RelativeLayout
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/aikbd_reward_close" >
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>

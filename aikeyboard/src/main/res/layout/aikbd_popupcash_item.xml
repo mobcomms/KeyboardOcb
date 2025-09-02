@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#aaffffff">
+
+    <ImageView
+        android:id="@+id/mango_plus_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/mango_ad_gubun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/aikbd_white"
+        android:textSize="22dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

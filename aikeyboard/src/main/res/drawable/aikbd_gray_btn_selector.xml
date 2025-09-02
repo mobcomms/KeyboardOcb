@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- selected -->
+    <item android:drawable="@drawable/aikbd_shape_gray_on" android:state_selected="true"/>
+    <!-- pressed -->
+    <item android:drawable="@drawable/aikbd_shape_gray_on" android:state_pressed="true"/>
+    <!-- focused -->
+    <item android:drawable="@drawable/aikbd_shape_gray_on" android:state_focused="true"/>
+    <!-- default -->
+    <item android:drawable="@drawable/aikbd_shape_gray_off"/>
+
+</selector>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+    <!--&lt;!&ndash; selected &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/aikbd_btn_gray_on" android:state_selected="true"/>-->
+    <!--&lt;!&ndash; pressed &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/aikbd_btn_gray_on" android:state_pressed="true"/>-->
+    <!--&lt;!&ndash; focused &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/aikbd_btn_gray_on" android:state_focused="true"/>-->
+    <!--&lt;!&ndash; default &ndash;&gt;-->
+    <!--<item android:drawable="@drawable/aikbd_btn_gray_off"/>-->
+
+<!--</selector>-->

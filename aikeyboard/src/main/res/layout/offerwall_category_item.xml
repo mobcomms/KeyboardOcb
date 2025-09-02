@@ -1,0 +1,31 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="38dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="전체"
+        android:id="@+id/c_text"
+        android:includeFontPadding="false"
+        android:textSize="16dp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <View
+        android:id="@+id/c_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintLeft_toLeftOf="@+id/c_text"
+        app:layout_constraintRight_toRightOf="@+id/c_text"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

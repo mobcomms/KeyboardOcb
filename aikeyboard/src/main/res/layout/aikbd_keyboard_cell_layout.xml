@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="9dp"
+    android:paddingRight="9dp"
+    android:paddingTop="16dp">
+
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="87dp"
+        android:id="@+id/iContainer"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/kbd_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            android:background="@drawable/aikbd_kb_kb_thumbnail_img_black30">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/aikbd_ico_28_checkbox_all_on"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/kbd_title"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:textSize="13dp"
+        android:layout_below="@+id/iContainer"/>
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/background"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/btn_setting_choice_on"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:padding="3dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/kbd_bg"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/btn_setting_choice_01" />-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/kbd_sel"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:background="@drawable/aikbd_img_check"-->
+        <!--android:visibility="invisible" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/bottom_base"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_below="@+id/background"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/kbd_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/kbd_bg"-->
+        <!--android:layout_marginBottom="18dp"-->
+        <!--android:layout_marginTop="7dp"-->
+        <!--android:textSize="13dp"-->
+        <!--android:textColor="@color/aikbd_black"-->
+        <!--android:gravity="center"-->
+        <!--android:text="천지인" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/kbd_title"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/bottom_base"-->
+        <!--android:layout_marginBottom="5dp"-->
+        <!--android:textSize="14dp"-->
+        <!--android:textColor="@color/aikbd_negative_gray"-->
+        <!--android:gravity="center"-->
+        <!--android:text="천지인" />-->
+
+</RelativeLayout>

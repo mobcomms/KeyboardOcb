@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 5월 적용 예정 -->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="@dimen/aikbd_keyboard_vertical_gap">
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="114" android:keyLabel="ㄱ" android:keyWidth="23.35%p" android:horizontalGap="1.8%p"/>
+        <Key android:codes="115" android:keyLabel="ㄴ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="107" android:keyLabel="ㅏㅓ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:isRepeatable="true"
+            android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="102" android:keyLabel="ㄹ" android:keyWidth="23.35%p" android:horizontalGap="1.8%p"/>
+        <Key android:codes="97" android:keyLabel="ㅁ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="104" android:keyLabel="ㅗㅜ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="32" android:keyIcon="@drawable/aikbd_sym_keyboard_space" android:isRepeatable="true"
+            android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="116" android:keyLabel="ㅅ" android:keyWidth="23.35%p" android:horizontalGap="1.8%p"/>
+        <Key android:codes="100" android:keyLabel="ㅇ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="108" android:keyLabel="ㅣ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="46,63" android:keyLabel=".?" android:keyWidth="11.175%p" android:horizontalGap="1.0%p" android:popupKeyboard="@xml/aikbd_keyboard_popup_nara_template"/>
+        <Key android:codes="10" android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="11.175%p" android:horizontalGap="1.0%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap" >
+        <Key android:codes="119" android:keyLabel="획추가" android:keyWidth="23.35%p" android:horizontalGap="1.8%p"/>
+        <Key android:codes="109" android:keyLabel="ㅡ" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="99" android:keyLabel="쌍자음" android:keyWidth="23.35%p" android:horizontalGap="1.0%p"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/aikbd_img_tastenumber" android:keyWidth="11.175%p"
+            android:horizontalGap="1.0%p"/>
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="11.175%p"
+            android:horizontalGap="1.0%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+</Keyboard>
+
+
+<!-- 2023 3월 epic 배포 예정 버전 -->
+<!--
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="@dimen/aikbd_keyboard_vertical_gap">
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="114" android:keyLabel="ㄱ" android:keyWidth="22.2%p" android:horizontalGap="2.45%p"/>
+        <Key android:codes="115" android:keyLabel="ㄴ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="107" android:keyLabel="ㅏㅓ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:isRepeatable="true"
+            android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="102" android:keyLabel="ㄹ" android:keyWidth="22.2%p" android:horizontalGap="2.45%p"/>
+        <Key android:codes="97" android:keyLabel="ㅁ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="104" android:keyLabel="ㅗㅜ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="32" android:keyIcon="@drawable/aikbd_sym_keyboard_space" android:isRepeatable="true"
+            android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="116" android:keyLabel="ㅅ" android:keyWidth="22.2%p" android:horizontalGap="2.45%p"/>
+        <Key android:codes="100" android:keyLabel="ㅇ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="108" android:keyLabel="ㅣ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="46,63" android:keyLabel=".?" android:keyWidth="10.1%p" android:horizontalGap="2.1%p" android:popupKeyboard="@xml/aikbd_keyboard_popup_nara_template"/>
+        <Key android:codes="10" android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="10.1%p" android:horizontalGap="2.1%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap" >
+        <Key android:codes="119" android:keyLabel="획추가" android:keyWidth="22.2%p" android:horizontalGap="2.45%p"/>
+        <Key android:codes="109" android:keyLabel="ㅡ" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="99" android:keyLabel="쌍자음" android:keyWidth="22.2%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/aikbd_img_tastenumber" android:keyWidth="10.1%p" android:horizontalGap="2.1%p"/>
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="10.1%p" android:horizontalGap="2.1%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+</Keyboard>
+-->
+<!-- 2023 02 27 배포버전
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="@dimen/aikbd_keyboard_vertical_gap">
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="114" android:keyLabel="ㄱ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="115" android:keyLabel="ㄴ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="107" android:keyLabel="ㅏㅓ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:isRepeatable="true" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="102" android:keyLabel="ㄹ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="97" android:keyLabel="ㅁ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="104" android:keyLabel="ㅗㅜ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="32" android:keyIcon="@drawable/aikbd_sym_keyboard_space" android:isRepeatable="true" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="116" android:keyLabel="ㅅ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="100" android:keyLabel="ㅇ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="108" android:keyLabel="ㅣ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="46,63" android:keyLabel=".?" android:keyWidth="11.015%p" android:horizontalGap="1.32%p" android:popupKeyboard="@xml/aikbd_keyboard_popup_nara_template"/>
+        <Key android:codes="10" android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap" >
+        <Key android:codes="119" android:keyLabel="획추가" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="109" android:keyLabel="ㅡ" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="99" android:keyLabel="쌍자음" android:keyWidth="23.35%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/aikbd_img_tastenumber" android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="11.015%p" android:horizontalGap="1.32%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+</Keyboard>
+-->
+    <!-- 원본 20220819
+    <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+        android:verticalGap="2.5dp"
+        android:keyWidth="24.6%p">
+
+        <Row android:keyHeight="@dimen/aikbd_key_height">
+            <Key android:codes="114" android:keyLabel="ㄱ" android:horizontalGap="0.8%p"/>
+            <Key android:codes="115" android:keyLabel="ㄴ"/>
+            <Key android:codes="107" android:keyLabel="ㅏㅓ"/>
+            <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:isRepeatable="true"/>/>
+        </Row>
+
+        <Row android:keyHeight="@dimen/aikbd_key_height">
+            <Key android:codes="102" android:keyLabel="ㄹ" android:horizontalGap="0.8%p"/>
+            <Key android:codes="97" android:keyLabel="ㅁ"/>
+            <Key android:codes="104" android:keyLabel="ㅗㅜ"/>
+            <Key android:codes="32" android:keyIcon="@drawable/aikbd_sym_keyboard_space" android:isRepeatable="true"/>
+        </Row>
+
+        <Row android:keyHeight="@dimen/aikbd_key_height">
+            <Key android:codes="116" android:keyLabel="ㅅ" android:horizontalGap="0.8%p"/>
+            <Key android:codes="100" android:keyLabel="ㅇ"/>
+            <Key android:codes="108" android:keyLabel="ㅣ"/>
+            <Key android:codes="46,63" android:keyLabel=".?" android:keyWidth="12.3%p" android:popupKeyboard="@xml/aikbd_keyboard_popup_nara_template"/>
+
+            <Key android:codes="10" android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+                android:keyWidth="12.3%p" android:keyEdgeFlags="right"/>
+        </Row>
+
+        <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap" >
+            <Key android:codes="119" android:keyLabel="획추가" android:horizontalGap="0.8%p"/>
+            <Key android:codes="109" android:keyLabel="ㅡ"/>
+            <Key android:codes="99" android:keyLabel="쌍자음"/>
+            <Key android:codes="-2" android:keyIcon="@drawable/aikbd_img_tastenumber" android:keyWidth="12.5%p"/>
+            <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="12.5%p" android:keyEdgeFlags="right"/>
+        </Row>
+
+    </Keyboard> -->

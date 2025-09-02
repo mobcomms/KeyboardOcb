@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/olabang_bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:layout_alignParentBottom="true">
+
+
+        <RelativeLayout
+            android:id="@+id/olabang_first_tab"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/olabang_first_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/aikbd_kb_bar_keyboard_return_icon"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/div"
+            android:layout_width="1dp"
+            android:layout_height="21dp"
+            android:layout_centerVertical="true"
+            android:background="#e8e8ea"
+            android:layout_toRightOf="@+id/olabang_first_tab"/>
+
+        <RelativeLayout
+            android:id="@+id/olabang_second_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/div">
+
+            <TextView
+                android:id="@+id/strGoOlabang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/arrow"
+                android:text="오!라방 더보기"
+                android:textColor="#868686"
+                android:textSize="13dp" />
+
+            <View
+                android:id="@+id/arrow"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/aiibd_ico_12_arrow_gray_right" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e8e8e8"
+        android:layout_above="@+id/olabang_bottom_navigator"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_above="@+id/line">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/top_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"/>
+
+            <View
+                android:id="@+id/bs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_centerInParent="true"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bs"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="-2dp"
+                android:background="#ffffff" />
+
+            <RelativeLayout
+                android:id="@+id/olabang_layer"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:layout_centerInParent="true"
+                android:visibility="gone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/aikbd_top_round_bg">
+
+                    <ImageView
+                        android:id="@+id/status"
+                        android:layout_width="36dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/aikbd_img_live_text_onair"
+                        app:layout_constraintLeft_toRightOf="@+id/imageLayer"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_line" />
+
+                    <RelativeLayout
+                        android:id="@+id/olabang_close"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="14dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/olabang_kb_bar_close_icon"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="6dp"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="4dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/status"
+                        app:layout_constraintLeft_toRightOf="@+id/status"
+                        app:layout_constraintTop_toTopOf="@+id/status">
+
+                        <TextView
+                            android:layout_width="6dp"
+                            android:layout_height="6dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/aikbd_live_dot" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tlt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="24dp"
+                        android:gravity="center_vertical"
+                        android:text="오늘 오라방!"
+                        android:textColor="#000000"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginRight="24dp"
+                        android:visibility="invisible"
+                        android:background="@drawable/aikbd_olabang_point_bg"
+                        android:gravity="center"
+                        android:paddingLeft="6dp"
+                        android:paddingRight="6dp"
+                        android:text="10P"
+                        android:textColor="#ffffff"
+                        android:textSize="14dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_line" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="12dp"
+                        android:background="#fff2f6"
+                        app:layout_constraintLeft_toLeftOf="@+id/status_kor"
+                        app:layout_constraintRight_toRightOf="@+id/time"
+                        app:layout_constraintTop_toTopOf="@+id/status_kor"
+                        android:layout_marginTop="18dp"/>
+
+                    <TextView
+                        android:id="@+id/status_kor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:includeFontPadding="false"
+                        android:text="방송중"
+                        android:textColor="#ed3560"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toLeftOf="@+id/status"
+                        app:layout_constraintTop_toBottomOf="@+id/status" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:includeFontPadding="false"
+                        android:textColor="#000000"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toTopOf="@+id/status_kor"
+                        app:layout_constraintBottom_toBottomOf="@+id/status_kor"
+                        app:layout_constraintLeft_toRightOf="@+id/status_kor"
+                        tools:text="00:34:54"/>
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:maxLines="2"
+                        android:textColor="#000000"
+                        android:layout_marginTop="12dp"
+                        android:letterSpacing="-0.04"
+                        android:lineSpacingExtra="1.3dp"
+                        app:layout_constraintLeft_toLeftOf="@+id/status"
+                        app:layout_constraintRight_toRightOf="@+id/point"
+                        app:layout_constraintTop_toBottomOf="@+id/status_kor"
+                        tools:text="나의 거친 피부와 불안한 각질들을 위한 최고의 선택! 코스알엑스"/>
+
+                    <View
+                        android:id="@+id/tlt_line"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="#000000"
+                        app:layout_constraintLeft_toLeftOf="@+id/tlt"
+                        app:layout_constraintRight_toRightOf="@+id/tlt"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/imageLayer"
+                        android:layout_width="102dp"
+                        android:layout_height="100dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintLeft_toLeftOf="@+id/tlt"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_line">
+
+                        <View
+                            android:id="@+id/img_bg"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/olabang_bg"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/olabangImage"
+                            android:layout_width="98dp"
+                            android:layout_height="98dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_bg"
+                            app:layout_constraintLeft_toLeftOf="@+id/img_bg"
+                            app:layout_constraintRight_toRightOf="@+id/img_bg"
+                            app:layout_constraintTop_toTopOf="@+id/img_bg"/>
+
+                        <TextView
+                            android:id="@+id/saleImage"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:gravity="center"
+                            android:textColor="#ffffff"
+                            android:textSize="11dp"
+                            android:lineSpacingExtra="-4dp"
+                            tools:text="50%"
+                            android:background="@drawable/aikbd_olabang_sale_bg"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/shopping_layer"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:visibility="visible"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tlt_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp">
+
+                    <TextView
+                        android:id="@+id/tlt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center_vertical"
+                        android:text="쇼핑적립"
+                        android:letterSpacing="-0.04"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14dp"
+                        android:includeFontPadding="false"/>
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/top_base"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintBottom_toTopOf="@+id/tlt_title"
+                        android:layout_marginBottom="5dp"/>
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/bot_base"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_title"
+                        android:layout_marginTop="5dp"/>
+
+                    <View
+                        android:id="@+id/base_tlt"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="@+id/tlt_title"
+                        app:layout_constraintRight_toRightOf="@+id/tlt_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_title"
+                        android:layout_marginTop="2dp"
+                        android:background="#000000"/>
+
+                    <HorizontalScrollView
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:scrollbars="none"
+                        android:overScrollMode="never"
+                        android:layout_marginLeft="5dp"
+                        app:layout_constraintLeft_toRightOf="@+id/base_tlt"
+                        app:layout_constraintTop_toTopOf="@+id/top_base"
+                        app:layout_constraintBottom_toBottomOf="@+id/bot_base"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center_horizontal|right">
+
+                            <TextView
+                                android:id="@+id/tab_homeshopping"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:includeFontPadding="false"
+                                android:text="홈쇼핑"
+                                android:textColor="#bfbfbf"
+                                android:textSize="13dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:id="@+id/dot_left_domestic"
+                                android:layout_width="3dp"
+                                android:layout_height="3dp"
+                                android:layout_marginLeft="6dp"
+                                app:layout_constraintLeft_toRightOf="@+id/tab_homeshopping"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:background="@drawable/aikbd_mid_dot_gray"
+                                android:layout_gravity="center_vertical"/>
+
+                            <TextView
+                                android:id="@+id/tab_domestic"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="국내쇼핑"
+                                android:includeFontPadding="false"
+                                android:textSize="13dp"
+                                android:gravity="center"
+                                app:layout_constraintLeft_toRightOf="@+id/dot_left_domestic"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginLeft="6dp"
+                                android:textColor="#bfbfbf"/>
+
+                            <View
+                                android:id="@+id/dot_left_book"
+                                android:layout_width="3dp"
+                                android:layout_height="3dp"
+                                android:layout_marginLeft="6dp"
+                                app:layout_constraintLeft_toRightOf="@+id/tab_domestic"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:background="@drawable/aikbd_mid_dot_gray"
+                                android:layout_gravity="center_vertical"/>
+
+                            <TextView
+                                android:id="@+id/tab_book"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="도서"
+                                android:includeFontPadding="false"
+                                android:textSize="13dp"
+                                android:gravity="center"
+                                app:layout_constraintLeft_toRightOf="@+id/dot_left_book"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginLeft="6dp"
+                                android:textColor="#bfbfbf"/>
+
+                            <View
+                                android:id="@+id/dot_left_oversea"
+                                android:layout_width="3dp"
+                                android:layout_height="3dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="6dp"
+                                app:layout_constraintLeft_toRightOf="@+id/tab_book"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:background="@drawable/aikbd_mid_dot_gray"
+                                android:layout_gravity="center_vertical"/>
+
+                            <TextView
+                                android:id="@+id/tab_oversea"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:text="해외쇼핑"
+                                android:includeFontPadding="false"
+                                android:textSize="13dp"
+                                android:gravity="center"
+                                app:layout_constraintLeft_toRightOf="@+id/dot_left_oversea"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:layout_marginLeft="6dp"
+                                android:textColor="#bfbfbf"/>
+
+                            <View
+                                android:id="@+id/dot_left_travel"
+                                android:layout_width="3dp"
+                                android:layout_height="3dp"
+                                android:layout_marginLeft="6dp"
+                                app:layout_constraintLeft_toRightOf="@+id/tab_oversea"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:background="@drawable/aikbd_mid_dot_gray"
+                                android:layout_gravity="center_vertical"/>
+
+                            <TextView
+                                android:id="@+id/tab_travel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:text="여행"
+                                android:includeFontPadding="false"
+                                android:textSize="13dp"
+                                android:gravity="center"
+                                android:textColor="#bfbfbf"
+                                android:layout_marginLeft="6dp"
+                                app:layout_constraintLeft_toRightOf="@+id/dot_left_travel"
+                                app:layout_constraintTop_toTopOf="parent"/>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tlt_layer"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="13dp"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/shopping_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"
+                        android:overScrollMode="never"/>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+            <!--
+            <RelativeLayout
+                android:id="@+id/timedeal_layer"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:layout_height="205dp"
+                android:layout_centerInParent="true"
+                android:focusable="false"
+                android:focusableInTouchMode="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tlt_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp">
+
+                    <TextView
+                        android:id="@+id/tlt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="center_vertical"
+                        android:text="오늘의 타임딜"
+                        android:letterSpacing="-0.04"
+                        android:layout_marginTop="24dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textSize="14dp"
+                        android:includeFontPadding="false"/>
+
+                    <View
+                        android:id="@+id/base_tlt"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintLeft_toLeftOf="@+id/tlt_title"
+                        app:layout_constraintRight_toRightOf="@+id/tlt_title"
+                        app:layout_constraintTop_toBottomOf="@+id/tlt_title"
+                        android:layout_marginTop="2dp"
+                        android:background="#000000"/>
+
+                    <TextView
+                        android:id="@+id/total_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13dp"
+                        android:textColor="#40000000"
+                        app:layout_constraintTop_toTopOf="@+id/tlt_title"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:includeFontPadding="false"
+                        tools:text="/4"/>
+
+                    <TextView
+                        android:id="@+id/page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="13dp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        app:layout_constraintTop_toTopOf="@+id/tlt_title"
+                        app:layout_constraintRight_toLeftOf="@+id/total_page"
+                        android:includeFontPadding="false"
+                        tools:text="1"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_below="@+id/tlt_layer"/>
+
+                <LinearLayout
+                    android:id="@+id/sc_timedeal_layer"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="26dp"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/tlt_layer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/contentLayer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:background="#ffffff"
+                        android:layout_centerVertical="true">
+
+                        <View
+                            android:id="@+id/sc_image"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/timedeal_sc"/>
+
+                        <LinearLayout
+                            android:id="@+id/sc_content"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:background="#ffffff"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toTopOf="@+id/sc_image"
+                            app:layout_constraintLeft_toRightOf="@+id/sc_image"
+                            app:layout_constraintRight_toRightOf="parent">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
+                                android:layout_marginTop="3dp"
+                                android:background="#f6f6f6"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
+                                android:layout_marginTop="4dp"
+                                android:background="#f6f6f6"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="92dp"
+                                android:layout_marginTop="13dp"
+                                android:background="#f6f6f6"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="92dp"
+                                android:layout_marginTop="4dp"
+                                android:background="#f6f6f6"/>
+
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/baseline"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_below="@+id/pager"
+                    android:background="#ff0000"/>
+
+                <LinearLayout
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="6dp"
+                    android:orientation="horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_above="@+id/baseline"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+-->
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

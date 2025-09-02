@@ -1,0 +1,125 @@
+<resources>
+    <!-- Symbols that are commonly considered word separators in this language -->
+    <string name="aikbd_word_separators">\u0020.,;:!?\n()[]*&amp;@{}/&lt;&gt;_+=|&quot;</string>
+    <!-- Labels on soft keys -->
+    <string name="aikbd_querty">쿼티</string>
+    <string name="aikbd_chunjin">천지인</string>
+    <string name="aikbd_chunjin_plus">천지인+</string>
+    <string name="aikbd_dan">단모음</string>
+    <string name="aikbd_nara">나랏글</string>
+    <string name="aikbd_setting_keyboard_title">%1$s 키보드 설정</string>
+    <string name="aikbd_setting_title">%1$s 설정</string>
+    <string name="aikbd_setting_kbd_title">키보드 설정</string>
+    <string name="aikbd_setting_kbd_kind">종류 설정</string>
+    <string name="aikbd_setting_kbd_theme_1">테마 설정</string>
+    <string name="aikbd_setting_kbd_size">크기 설정</string>
+    <string name="aikbd_setting_kbd_theme_1_desc">키보드 테마를 설정합니다.</string>
+    <string name="aikbd_setting_kbd_size_desc">키보드의 크기를 설정합니다</string>
+    <string name="aikbd_setting_search_hint">더 많은 배경 이미지를 바로 검색해보세요!</string>
+    <string name="aikbd_photo_theme">포토테마</string>
+    <string name="aikbd_color_theme">키보드테마</string>
+    <string name="aikbd_gallary">갤러리</string>
+    <string name="aikbd_key_ok">확인</string>
+    <string name="aikbd_next">다음</string>
+    <string name="aikbd_cancel">취소</string>
+    <string name="aikbd_set_option">옵션설정</string>
+    <string name="aikbd_activation_enliple_keyboard">%1$s 키보드 활성화 하기</string>
+    <string name="aikbd_select_enliple_keyboard">%1$s 키보드 선택하기</string>
+    <string name="aikbd_go_setting">아래 버튼을 클릭하여 %1$s 설정화면으로 이동해주세요</string>
+    <string name="aikbd_go_picker">아래 버튼을 클릭하여 %1$s를 선택해주세요 </string>
+    <string name="aikbd_go_picker1">%1$s를 선택해주세요 </string>
+    <string name="aikbd_go_check">아래 버튼을 클릭하여 %1$s를 선택해주세요. %2$s에서는 어떠한 개인정보도 수집하지 않습니다.</string>
+    <string name="aikbd_sound_vibrate_setting">소리/진동 설정</string>
+    <string name="aikbd_set_volume">음량 설정</string>
+    <string name="aikbd_set_volume_content">키 버튼 소리 크기를 설정합니다.</string>
+    <string name="aikbd_change_sound">소리 변경</string>
+    <string name="aikbd_change_sound_content">키 버튼 소리를 선택하세요</string>
+    <string name="aikbd_select_key">키 버튼 소리 선택</string>
+    <string-array name="aikbd_sound_array">
+        <item>버튼음1</item>
+        <item>버튼음2</item>
+        <item>버튼음3</item>
+        <item>버튼음4</item>
+        <item>버튼음5</item>
+    </string-array>
+    <string name="aikbd_vibrate_set">진동 세기 설정</string>
+    <string name="aikbd_vibrate_set_content">진동 세기를 설정합니다.</string>
+    <!--<string name="aikbd_email_address">chaumet7077@naver.com</string> -->
+    <string name="aikbd_set_func">기능 설정</string>
+    <string name="aikbd_preview">입력 키 미리보기</string>
+    <string name="aikbd_preview_content">키 버튼을 누를 때, 말풍선이 나타납니다.</string>
+    <string name="aikbd_qwerty_num">숫자키 추가</string>
+    <string name="aikbd_qwerty_num_content">숫자키를 추가합니다.</string>
+    <string name="aikbd_hide_ad">광고 감추기</string>
+    <string name="aikbd_hide_ad_content">24시간동안만 광고가 안보입니다.</string>
+    <string name="aikbd_normal_key">일반키</string>
+    <string name="aikbd_special_key">특수키</string>
+    <string name="aikbd_all_key">모든키</string>
+    <string name="aikbd_init">초기화</string>
+    <string name="aikbd_recent_search">최근 검색어</string>
+    <string name="aikbd_no_recent_search">최근 검색어가 없습니다.</string>
+    <string name="aikbd_no_result">검색 결과가 없습니다.</string>
+    <string name="aikbd_memo_title_hint">제목이 필요하면 입력하세요</string>
+    <string name="aikbd_memo_hint">내용을 입력하세요</string>
+    <string name="aikbd_memo_saved">메모가 저장되었습니다</string>
+    <string name="aikbd_memo_deleted">메모가 삭제되었습니다</string>
+    <string name="aikbd_memo_exist">이미 존재하는 내용입니다.</string>
+    <string name="aikbd_memo_empty">저장할 내용이 없습니다</string>
+    <string name="aikbd_memo_insert_error">메모는 30개까지 저장할 수 있습니다. 추가로 저장하고 싶으시면 불필요한 메모를 삭제 하시기 바랍니다.</string>
+    <string name="aikbd_str_google">Google</string>
+    <string name="aikbd_str_naver">Naver</string>
+    <string name="aikbd_str_daum">Daum</string>
+    <string name="aikbd_str_kakao">카카오톡</string>
+    <string name="aikbd_str_youtube">YouTube</string>
+    <string name="aikbd_bg_alpha">배경 투명도 설정</string>
+    <string name="aikbd_complete">완료</string>
+    <string name="aikbd_change_btn_color">버튼 색상 변경</string>
+    <string name="aikbd_select_keyboard">키보드 선택</string>
+    <string name="aikbd_received_ssl_error">이 사이트의 보안 인증서는 신뢰할 수 없습니다. \n 계속하시겠습니까? </string>
+    <string name="aikbd_save_processing">적립처리중</string>
+    <string name="aikbd_save_complete">적립완료</string>
+    <string name="aikbd_save_fail">적립불가</string>
+    <string name="aikbd_go_to_see">보러가기</string>
+    <string name="aikbd_net_error">통신에 실패하였습니다.</string>
+    <!-- daisy -->
+    <!--<string name="daisy_banner_code">tk95pqe05yngitxn</string>-->
+    <!--<string name="daisy_ending_code">57ksywpqixoc6fw9</string>-->
+
+	
+
+ <string name="app_name"></string>
+    <!--<string name="agree_personal_info">개인정보수집 동의</string>-->
+    <string name="agree_doc">위 내용에 동의함</string>
+    <string name="check_confirm">위 내용에 동의 하신 후 이용하실 수 있습니다.</string>
+    <!--<string name="facebook_app_id">1755217024783690</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb1755217024783690</string>-->
+
+    <!--<string name="facebook_app_id">2043953242517826</string>-->
+    <!--<string name="fb_login_protocol_scheme">fb2043953242517826</string>-->
+    <!--<string name="member_out_content">·회원탈퇴시 포인트는 7일 이후 완전히 소멸됩니다.\n·회원탈퇴시 포인트 복구가 불가능하니 신중을 기해주십시오\n·동일 아이디로는 7일 이후부터 재가입이 가능합니다</string>-->
+
+    <!--<string name="email_caution">가입 후 변경이 불가합니다. 정확히 입력해주세요.</string>-->
+    <!--<string name="grade_guide_txt_4">· 충전소, 광고 미션, 친구활동적립금, 출석 등 미션을 참여하시면 활동 점수를 합산하여 등급 랭킹이 이루어 집니다.</string>-->
+
+    <string name="unsafe_check">안전한 사용을 위해 URL 주소를 터치해 주세요.</string>
+   <string name="safe">탐지 결과, 해당 사이트는 안전합니다.</string>
+   <string name="danger">탐지 결과, 위험한 사이트 입니다.</string>
+   <string name="suspicion">탐지 결과, 스미싱이 의심되는 사이트 입니다.</string>
+
+    <string name="popular_theme">가장 인기 있는 테마</string>
+    <string name="ocb_keyboard_name">OK캐쉬백 돈버는 키보드</string>
+
+    <string name="coupang_std_1">[항상 만족스러운 쿠팡]</string>
+    <string name="coupang_std_2">[당신이 찾는 모든 것 쿠팡]</string>
+    <string name="coupang_std_3">[오늘 사고 내일 받는 쿠팡]</string>
+
+    <string name="aikbd_offerwall_fail_toast_message">데이터획득에 실패하였습니다.</string>
+    <string name="aikbd_offerwall_update">선택하신 미션에 참여하기 위해서는 최신버전 앱을 다운받으시기 바랍니다.</string>
+
+    <string name="aikbd_chat_gpt_header">안녕하세요!\n돈버는 키보드를 통해 인공지능 ChatGPT와 이렇게 대화할 수 있어요.\n🤖\n• 된장찌개 레시피 알려줘.\n• 제주도 3박4일 일정 짜줘.\n\n먼저 몇 가지 안내와 유의사항을 전해 드릴게요.😀\n\n
+[안내]\n1. OpenAI 사의 ChatGPT를 기반으로 대화가 이루어져요.\n2. 대화 내용은 OpenAI로 전달되어 AI 성능 개선에 활용될 수 있어요.\n3. 대화 내용이 많거나 복잡하면 시간이 걸릴 수 있어요. 잠시 기다려 주세요.\n\n[유의사항]\n1. ChatGPT는 2021년 9월 이전 데이터로 학습되어 최신 정보에 대한 답변은 정확하지 않을 수 있어요.\n2. ChatGPT의 답변은 100% AI에 의해 만들어지는 것으로 실제 사실과 다를 수 있어요.\n3. ChatGPT의 답변 내용은 OK캐쉬백 서비스 및 회사와는 전혀 관계 없어요
+        \n4. 개인정보 등 민감한 정보를 전송하지 않도록 주의해 주세요.\n\n이 서비스를 이용하면 위 유의사항에 동의하는 것으로 간주되니 안내 내용을 꼭 확인해 주세요.\n\n
+➡️대화를 시작하려면 이용권 받기를 선택해 주세요!</string>
+
+
+</resources>

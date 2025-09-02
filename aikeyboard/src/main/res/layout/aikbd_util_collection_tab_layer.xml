@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/collection_bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true">
+
+
+        <RelativeLayout
+            android:id="@+id/collection_first_tab"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/shopping_first_img"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/aikbd_kb_bar_keyboard_return_icon"/>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/div"
+            android:layout_width="1dp"
+            android:layout_height="21dp"
+            android:background="#e8e8ea"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/collection_first_tab"/>
+
+        <RelativeLayout
+            android:id="@+id/collection_second_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/div"
+            android:layout_alignParentRight="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp">
+
+                <View
+                    android:id="@+id/arrow"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/aiibd_ico_12_arrow_gray_right" />
+
+                <TextView
+                    android:id="@+id/strCollection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/arrow"
+                    android:text="적립 내역 보기"
+                    android:textColor="#868686"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e8e8e8"
+        android:layout_above="@+id/collection_bottom_navigator"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/category_layer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line">
+
+        <LinearLayout
+            android:id="@+id/fst_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/aikbd_util_change_theme"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ico_change_theme"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/aikbd_util_bg"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/aikbd_color_brush"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="테마변경"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_change_theme"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aikbd_util_clipboard"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ico_clipboard"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/menu_icon_clip"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="클립보드"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_clipboard"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aikbd_util_setting"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ico_setting"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/menu_icon_setting" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="설정"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_setting"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aikbd_util_qna"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/ico_qna"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/aikbd_util_bg"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/aikbd_chat_2" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="문의/건의"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_qna"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/aikbd_util_type"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ico_type"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/menu_icon_keyboard"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="돈타자"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_type"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:id="@+id/aikbd_util_surprise"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ico_surprise"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/menu_icon_surprise"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="깜짝 포인트"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_surprise"/>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginRight="29dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fst_line">
+
+            <RelativeLayout
+                android:id="@+id/voice_layer"
+                android:layout_width="60dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ico_voice"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/menu_icon_surprise"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="음성인식"
+                    android:gravity="center_horizontal"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:includeFontPadding="false"
+                    android:layout_below="@+id/ico_voice"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/util_ad_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/util_mobon_reward_ad_layer_c"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <View
+                    android:id="@+id/util_r_leftBg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <View
+                    android:id="@+id/util_r_rightBg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/util_reward_ad_layer"
+                android:layout_width="320dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:background="#00ffffff">
+
+                <RelativeLayout
+                    android:id="@+id/util_mobon_reward_ad_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="#00ffffff"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:background="#ffffff"
+                    android:visibility="gone"
+                    android:id="@+id/util_reward_coupang_layer">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/util_reward_coupang_image"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/util_reward_coupang_image">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:id="@+id/util_coupang_top_margin"/>
+
+                        <TextView
+                            android:id="@+id/util_coupang_product_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                            android:textSize="11dp"
+                            android:textColor="#000000"
+                            android:includeFontPadding="false"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0.7dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/util_coupang_price"
+                                tools:text="12,000원"
+                                android:textStyle="bold"
+                                android:includeFontPadding="false"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:textColor="#000000"
+                                android:textSize="12dp"/>
+
+                            <ImageView
+                                android:layout_width="46.7dp"
+                                android:layout_height="11.7dp"
+                                android:id="@+id/util_coupang_rocket"
+                                app:layout_constraintBottom_toBottomOf="@+id/util_coupang_price"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:layout_marginLeft="4dp"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:background="#ffffff"
+                    android:visibility="gone"
+                    android:id="@+id/util_reward_joint_layer">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/util_reward_joint_image"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/util_reward_joint_image">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:id="@+id/util_joint_top_margin"/>
+
+                        <TextView
+                            android:id="@+id/util_joint_product_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            tools:text="꺠끗한나라 순수시그니처 27m, 30롤, 1팩"
+                            android:textSize="11dp"
+                            android:textColor="#000000"
+                            android:includeFontPadding="false"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0.7dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/util_joint_price"
+                                tools:text="12,000원"
+                                android:textStyle="bold"
+                                android:includeFontPadding="false"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:textColor="#000000"
+                                android:textSize="12dp"/>
+
+                            <ImageView
+                                android:layout_width="46.7dp"
+                                android:layout_height="11.7dp"
+                                android:id="@+id/util_joint_logo"
+                                app:layout_constraintBottom_toBottomOf="@+id/util_joint_price"
+                                app:layout_constraintRight_toRightOf="parent"
+                                android:layout_marginLeft="4dp"/>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/util_joint_adchoice"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="320dp"
+                    android:layout_height="50dp"
+                    android:background="#ffffff"
+                    android:visibility="gone"
+                    android:id="@+id/util_reward_joint_banner_layer">
+
+                    <ImageView
+                        android:id="@+id/util_joint_banner_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <ImageView
+                        android:id="@+id/util_joint_banner_adchoice"
+                        android:layout_width="19dp"
+                        android:layout_height="19dp"
+                        android:scaleType="fitStart"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/util_rest_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="#00ffffff"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/util_reward_close"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true">
+
+                    <RelativeLayout
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                        <RelativeLayout
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/aikbd_reward_close" >
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/util_reward_point"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/aikbd_point_badge"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="1P"
+                    android:textColor="#ffffff"
+                    android:textSize="14dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/util_mobwith_layer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="gone"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="320dp"
+                android:layout_height="50dp"
+                android:id="@+id/util_mobwith_container"
+                android:layout_centerInParent="true">
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="12dp">
+
+                <TextView
+                    android:id="@+id/util_mobwith_reward_point"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/aikbd_point_badge"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="1P"
+                    android:textColor="#ffffff"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/util_mobwith_non_reward_badge"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:background="@drawable/aikbd_badge_point_complete"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/util_mobwith_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true">
+
+                <RelativeLayout
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/aikbd_kb_search_close_icon" >
+
+                    <RelativeLayout
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/aikbd_reward_close" >
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/clip_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line"
+        android:visibility="gone"
+        android:background="#F0F1F3"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/clip_recyclerView"
+            android:overScrollMode="never"
+            android:scrollbars="none"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:id="@+id/clip_empty_layer">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/empty_clip_top"
+                    android:textColor="#666666"
+                    android:includeFontPadding="false"
+                    android:layout_marginBottom="15dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="14dp"
+                    android:text="클립보드가 비어있어요."/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#acacac"
+                    android:lineSpacingExtra="6dp"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/empty_clip_top"
+                    android:includeFontPadding="false"
+                    android:textSize="14dp"
+                    android:text="복사한 내용이\n여기에 표시됩니다."/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        // TARGET 35 수정
+        classpath 'com.android.tools.build:gradle:8.4.0'
+//        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+
+//        // 아래 2라인 카카오톡 로그인
+//        mavenCentral()
+//        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+        maven { url "https://jitpack.io" }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

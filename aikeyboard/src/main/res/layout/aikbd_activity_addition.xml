@@ -1,0 +1,259 @@
+<com.enliple.keyboard.activity.MyRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00ffffff">
+
+    <RelativeLayout
+        android:id="@+id/top_layer"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:id="@+id/point_layer"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/aikbd_dark_gray1"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/point_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/aikbd_img_pop_cashicon" />
+
+            <TextView
+                android:id="@+id/ttl_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="6dp"
+                android:layout_toRightOf="@+id/point_image"
+                android:includeFontPadding="false"
+                android:text="포인트"
+                android:textColor="@color/aikbd_white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/keyboard_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ttl_point"
+                android:includeFontPadding="false"
+                android:textColor="@color/aikbd_yellow"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/point_unit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btn_setting_layer"
+                android:layout_toRightOf="@+id/keyboard_point"
+                android:text="P"
+                android:textColor="@color/aikbd_yellow"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/btn_del_layer"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/aikbd_btn_popup_close_off" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pager_layer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/point_layer"
+            android:background="#ffffff">
+
+            <com.enliple.keyboard.activity.VerticalPager
+                android:id="@+id/pager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/bot_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_below="@+id/pager" />
+
+            <RelativeLayout
+                android:id="@+id/top_arrow_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="20dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/aikbd_img_pop_up" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom_arrow_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bot_line"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="20dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/aikbd_img_pop_down" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ad_point_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bot_line"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/aikbd_img_pop_pointbg01">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/ad_point_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ad_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ad_point_title"
+                        android:layout_centerHorizontal="true"
+                        android:includeFontPadding="false"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_below="@+id/pager_layer"
+            android:background="@color/aikbd_dark_gray1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <RelativeLayout
+                android:id="@+id/ad_ttl_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLength="22"
+                    android:maxLines="1"
+                    android:textColor="@color/aikbd_white"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/sep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/title"
+                    android:includeFontPadding="false"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="/"
+                    android:textColor="@color/aikbd_white"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/sep"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="@color/aikbd_white"
+                    android:textSize="13dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/newposting_ttl_layer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/np_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/aikbd_white"
+                    android:textSize="13dp" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.enliple.keyboard.common.ProgressWheel
+        android:id="@+id/progress"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerInParent="true"
+        wheel:matProg_barColor="#5588FF"
+        wheel:matProg_progressIndeterminate="true" />
+</com.enliple.keyboard.activity.MyRelativeLayout>

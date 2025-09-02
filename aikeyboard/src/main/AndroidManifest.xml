@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.enliple.keyboard">
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+
+    <!-- RECEIVE_BOOT_COMPLETED는 NEWS NOTIFICATION 미반영으로 주석 -->
+    <!-- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />--> <!-- keyboard 뉴스 notification에서 alarm 다시 살리기 위해 추가 -->
+    <!-- photo theme에서 사용 -->
+    <!--
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- network type 가져오기 위해 필요 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/> <!-- 33 대응 ad_id 획득위한  퍼미션 추가 -->
+
+<!-- 음성인식 관련, 현재 사용하지 않는 기능으로 주석처리-->
+    <!--
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
+-->
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        tools:replace="android:allowBackup"
+        android:hardwareAccelerated="true"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:requestLegacyExternalStorage="true">
+
+<!--        <provider-->
+<!--            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"-->
+<!--            android:authorities="980456109.TTMultiProvider"-->
+<!--            />-->
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardSelectActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardGameZoneActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="keyboard_gamezone"
+                    android:scheme="enliplekeyboard" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.Keyboard_Empty_Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardSettingsActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.SettingSelectKeyboardActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+
+        <activity
+            android:name=".activity.STTPermissionActivity"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+        <activity
+            android:name=".activity.KeyboardOCBCategoryThemeActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardAditionADActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.Transparent"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardEmptyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:excludeFromRecents="true"
+            android:theme="@style/KeyBoardAppTheme"/>
+
+        <activity
+            android:name="com.enliple.keyboard.ui.ckeyboard.IntroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false">
+        </activity>
+
+<!--
+        <activity
+            android:name="com.enliple.keyboard.ui.ckeyboard.Pay_MainActivity"
+            android:launchMode="singleTop"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.enliple.ui.ckeyboard.Pay_MainActivity" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+-->
+
+        <activity
+            android:name="com.enliple.keyboard.ui.ckeyboard.KeyboardLoadActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.RewardAdWebViewActivity"
+            android:screenOrientation="portrait"
+            android:taskAffinity="AD.WEBVIEW"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallWebView1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallWebView23Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.OuterWebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallWebView6Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardOfferwallGuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="false"/>
+
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                <data-->
+<!--                    android:host="post_detail"-->
+<!--                    android:scheme="selphone" />-->
+<!--            </intent-filter>-->
+
+
+<!--        </activity>-->
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardFAQActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="keyboard_faq"
+                    android:scheme="enliplekeyboard" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardHybridOfferwallActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:excludeFromRecents="true"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="keyboard_offerwall_hybrid"
+                    android:scheme="enliplekeyboard" />
+
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.enliple.keyboard.activity.KeyboardChatGptChatActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/KeyBoardAppTheme"
+            android:windowSoftInputMode="adjustUnspecified"
+            android:excludeFromRecents="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="keyboard_chat_gpt"
+                    android:scheme="enliplekeyboard" />
+
+            </intent-filter>
+
+
+        </activity>
+
+<!--
+        <receiver android:name="com.enliple.keyboard.receiver.MyReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.VOLUME_CHANGED_ACTION" />
+                <action android:name="android.intent.action.ACTION_INPUT_METHOD_CHANGED" />
+
+            </intent-filter>
+        </receiver>
+-->
+
+        <!-- android:process=":encuskeyboard" InputMethodService가 메모리를 많이 차지해서 동일 uid 내의
+        webview에서 keyboard를 사용할 경우 memory issue 발생할 수 있음. 따라서 SoftKeyboard를 별도의 process로
+        지정하여 사용. 이럴 경우 본앱과 uid는 동일하므로 target 35에서 변경사항인 allowCrossUidActivitySwitchFromBelow
+        를 설정 안해도 됨. -->
+        <service
+            android:label="@string/ocb_keyboard_name"
+            android:exported="true"
+            android:name="com.enliple.keyboard.activity.SoftKeyboard"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:process=":encuskeyboard">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/aikbd_method" />
+        </service>
+
+        <!-- keyboard 관련 추가 code -->
+        <meta-data
+            android:name="keyboard_media_key"
+            android:value="cashkeyboard" />
+        <meta-data
+            android:name="keyboard_s_key"
+            android:value="10153" />
+        <meta-data
+            android:name="keyboard_u_key"
+            android:value="9431" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <!-- keyboard 관련 추가 code -->
+
+<!--        <meta-data-->
+<!--            android:name="com.google.android.gms.ads.APPLICATION_ID"-->
+<!--            android:value="@string/admob_id"/>-->
+    </application>
+</manifest>

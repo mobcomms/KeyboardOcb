@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/mobon_banner_border1"
+        android:gravity="center_horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:background="@drawable/mobon_banner_bg">
+
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:background="#7f7e7c"
+                android:minWidth="46dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/t_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:adjustViewBounds="true"
+                    android:background="@color/white"
+                    android:contentDescription="" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/t_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@+id/image_layout"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="12dp" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/mobon_banner_go"
+            android:contentDescription="" />
+
+
+        <ImageView
+            android:id="@+id/mobon_mark"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentTop="true"
+            android:layout_margin="3dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_mobon" />
+<!--
+        <RelativeLayout
+            android:id="@+id/kl_del"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp">
+
+            <RelativeLayout
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/ad_del_bg">
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/aikbd_btn_key_close" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+        -->
+    </RelativeLayout>
+
+</RelativeLayout>

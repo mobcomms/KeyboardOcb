@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+**
+** halbae87: modified Soft Keyboard Sample to create this project
+**
+*/
+-->
+<!-- 2023 3월 epic 배포 예정 버전
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="2dp">
+
+    <Row android:keyHeight="@dimen/aikbd_num_key_height">
+        <Key
+            android:codes="49"
+            android:keyEdgeFlags="left"
+            android:keyLabel="1"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="2.1%p"/>
+        <Key
+            android:codes="50"
+            android:keyLabel="2"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="51"
+            android:keyLabel="3"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="52"
+            android:keyLabel="4"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="53"
+            android:keyLabel="5"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="54"
+            android:keyLabel="6"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="55"
+            android:keyLabel="7"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="56"
+            android:keyLabel="8"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="57"
+            android:keyLabel="9"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="48"
+            android:keyEdgeFlags="right"
+            android:keyLabel="0"
+            android:keyWidth = "8.2%p"
+            android:horizontalGap="1.5%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key
+            android:codes="113"
+            android:keyEdgeFlags="left"
+            android:keyLabel="ㅂ"
+            android:keyWidth="10.6%p" android:horizontalGap="2.2%p"/>
+        <Key
+            android:codes="119"
+            android:keyLabel="ㅈ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="101"
+            android:keyLabel="ㄷ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="114"
+            android:keyLabel="ㄱ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="116"
+            android:keyLabel="ㅅ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="104"
+            android:keyLabel="ㅗ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="111"
+            android:keyLabel="ㅐ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="112"
+            android:keyLabel="ㅔ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key
+            android:codes="97"
+            android:keyEdgeFlags="left"
+            android:keyLabel="ㅁ"
+            android:keyWidth="10.6%p" android:horizontalGap="2.2%p"/>
+        <Key
+            android:codes="115"
+            android:keyLabel="ㄴ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="100"
+            android:keyLabel="ㅇ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="102"
+            android:keyLabel="ㄹ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="103"
+            android:keyLabel="ㅎ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="106"
+            android:keyLabel="ㅓ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="107"
+            android:keyLabel="ㅏ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+        <Key
+            android:codes="108"
+            android:keyLabel="ㅣ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.5%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key
+            android:codes="122"
+            android:keyLabel="ㅋ"
+            android:keyWidth="10.6%p" android:horizontalGap="11.6%p"/>
+        <Key
+            android:codes="120"
+            android:keyLabel="ㅌ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="99"
+            android:keyLabel="ㅊ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="118"
+            android:keyLabel="ㅍ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="110"
+            android:keyLabel="ㅜ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="109"
+            android:keyLabel="ㅡ"
+            android:keyWidth="10.6%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="-5"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_delete"
+            android:keyWidth="11.6%p" android:horizontalGap="3%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap">
+        <Key
+            android:codes="-2"
+            android:keyEdgeFlags="left"
+            android:keyIcon="@drawable/aikbd_img_tastenumber"
+            android:keyWidth="13.1%p" android:horizontalGap="2.1%p"/>
+        <Key
+            android:codes="-6"
+            android:keyIcon="@drawable/aikbd_img_language"
+            android:keyWidth="8.1%p" android:horizontalGap="1.6%p"/>
+
+        <Key android:codes="44"
+            android:keyLabel=","
+            android:keyWidth="8.1%p" android:horizontalGap="1.6%p"/>
+
+        <Key
+            android:codes="32"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_space"
+            android:keyWidth="37.3%p" android:horizontalGap="1.6%p"/>
+        <Key
+            android:codes="46"
+            android:keyLabel="."
+            android:popupKeyboard="@xml/aikbd_keyboard_popup_template"
+            android:keyWidth="8.1%p" android:horizontalGap="1.6%p"/>
+
+        <Key
+            android:codes="10"
+            android:keyEdgeFlags="right"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="13.1%p" android:horizontalGap="1.6%p" />
+    </Row>
+
+</Keyboard>
+-->
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="2dp">
+
+    <Row android:keyHeight="@dimen/aikbd_num_key_height">
+        <Key
+            android:codes="49"
+            android:keyEdgeFlags="left"
+            android:keyLabel="1"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="50"
+            android:keyLabel="2"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="51"
+            android:keyLabel="3"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="52"
+            android:keyLabel="4"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="53"
+            android:keyLabel="5"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="54"
+            android:keyLabel="6"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="55"
+            android:keyLabel="7"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="56"
+            android:keyLabel="8"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="57"
+            android:keyLabel="9"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="48"
+            android:keyEdgeFlags="right"
+            android:keyLabel="0"
+            android:keyWidth = "9.16%p"
+            android:horizontalGap="1.32%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_s_key_height">
+        <Key
+            android:codes="113"
+            android:keyEdgeFlags="left"
+            android:keyLabel="ㅂ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="119"
+            android:keyLabel="ㅈ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="101"
+            android:keyLabel="ㄷ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="114"
+            android:keyLabel="ㄱ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="116"
+            android:keyLabel="ㅅ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="104"
+            android:keyLabel="ㅗ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="111"
+            android:keyLabel="ㅐ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="112"
+            android:keyLabel="ㅔ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_s_key_height">
+        <Key
+            android:codes="97"
+            android:keyEdgeFlags="left"
+            android:keyLabel="ㅁ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="115"
+            android:keyLabel="ㄴ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="100"
+            android:keyLabel="ㅇ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="102"
+            android:keyLabel="ㄹ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="103"
+            android:keyLabel="ㅎ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="106"
+            android:keyLabel="ㅓ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="107"
+            android:keyLabel="ㅏ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="108"
+            android:keyLabel="ㅣ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_s_key_height">
+        <Key
+            android:codes="122"
+            android:keyLabel="ㅋ"
+            android:keyWidth="11.015%p" android:horizontalGap="11.05%p"/>
+        <Key
+            android:codes="120"
+            android:keyLabel="ㅌ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="99"
+            android:keyLabel="ㅊ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="118"
+            android:keyLabel="ㅍ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="110"
+            android:keyLabel="ㅜ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="109"
+            android:keyLabel="ㅡ"
+            android:keyWidth="11.015%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="-5"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_delete"
+            android:keyWidth="12.3%p" android:horizontalGap="2.64%p" />
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_s_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap">
+        <Key
+            android:codes="-2"
+            android:keyEdgeFlags="left"
+            android:keyIcon="@drawable/aikbd_img_tastenumber"
+            android:keyWidth="13.62%p" android:horizontalGap="1.32%p"/>
+        <Key
+            android:codes="-6"
+            android:keyIcon="@drawable/aikbd_img_language"
+            android:keyWidth="8.79%p" android:horizontalGap="1.32%p"/>
+
+        <Key android:codes="44"
+            android:keyLabel=","
+            android:keyWidth="8.79%p" android:horizontalGap="1.32%p"/>
+
+        <Key
+            android:codes="32"
+            android:isRepeatable="true"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_space"
+            android:keyWidth="37.15%p" android:horizontalGap="1.32%p" />
+        <Key
+            android:codes="46"
+            android:keyLabel="."
+            android:popupKeyboard="@xml/aikbd_keyboard_popup_template"
+            android:keyWidth="8.79%p" android:horizontalGap="1.32%p"/>
+
+        <Key
+            android:codes="10"
+            android:keyEdgeFlags="right"
+            android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="13.62%p" android:horizontalGap="1.32%p"/>
+    </Row>
+
+</Keyboard>
+
+    <!-- 원본 20220819
+   <Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+       android:verticalGap="2dp"
+       android:keyWidth="12.3%p">
+
+       <Row
+           android:keyWidth="9.84%p"
+           android:keyHeight="@dimen/aikbd_num_key_height">
+           <Key
+               android:codes="49"
+               android:horizontalGap="0.8%p"
+               android:keyEdgeFlags="left"
+               android:keyLabel="1" />
+           <Key
+               android:codes="50"
+               android:keyLabel="2" />
+           <Key
+               android:codes="51"
+               android:keyLabel="3" />
+           <Key
+               android:codes="52"
+               android:keyLabel="4" />
+           <Key
+               android:codes="53"
+               android:keyLabel="5" />
+           <Key
+               android:codes="54"
+               android:keyLabel="6" />
+           <Key
+               android:codes="55"
+               android:keyLabel="7" />
+           <Key
+               android:codes="56"
+               android:keyLabel="8" />
+           <Key
+               android:codes="57"
+               android:keyLabel="9" />
+           <Key
+               android:codes="48"
+               android:keyEdgeFlags="right"
+               android:keyLabel="0" />
+       </Row>
+
+       <Row android:keyHeight="@dimen/aikbd_s_key_height">
+           <Key
+               android:codes="113"
+               android:keyEdgeFlags="left"
+               android:keyLabel="ㅂ" android:horizontalGap="0.8%p"/>
+           <Key
+               android:codes="119"
+               android:keyLabel="ㅈ" />
+           <Key
+               android:codes="101"
+               android:keyLabel="ㄷ" />
+           <Key
+               android:codes="114"
+               android:keyLabel="ㄱ" />
+           <Key
+               android:codes="116"
+               android:keyLabel="ㅅ" />
+           <Key
+               android:codes="104"
+               android:keyLabel="ㅗ" />
+           <Key
+               android:codes="111"
+               android:keyLabel="ㅐ" />
+           <Key
+               android:codes="112"
+               android:keyLabel="ㅔ" />
+       </Row>
+
+       <Row android:keyHeight="@dimen/aikbd_s_key_height">
+           <Key
+               android:codes="97"
+               android:keyEdgeFlags="left"
+               android:keyLabel="ㅁ" android:horizontalGap="0.8%p"/>
+           <Key
+               android:codes="115"
+               android:keyLabel="ㄴ" />
+           <Key
+               android:codes="100"
+               android:keyLabel="ㅇ" />
+           <Key
+               android:codes="102"
+               android:keyLabel="ㄹ" />
+           <Key
+               android:codes="103"
+               android:keyLabel="ㅎ" />
+           <Key
+               android:codes="106"
+               android:keyLabel="ㅓ" />
+           <Key
+               android:codes="107"
+               android:keyLabel="ㅏ" />
+           <Key
+               android:codes="108"
+               android:keyLabel="ㅣ" />
+       </Row>
+
+       <Row android:keyHeight="@dimen/aikbd_s_key_height">
+           <Key
+               android:codes="122"
+               android:horizontalGap="11.1%p"
+               android:keyLabel="ㅋ" />
+           <Key
+               android:codes="120"
+               android:keyLabel="ㅌ" />
+           <Key
+               android:codes="99"
+               android:keyLabel="ㅊ" />
+           <Key
+               android:codes="118"
+               android:keyLabel="ㅍ" />
+           <Key
+               android:codes="110"
+               android:keyLabel="ㅜ" />
+           <Key
+               android:codes="109"
+               android:keyLabel="ㅡ" />
+           <Key
+               android:codes="-5"
+               android:isRepeatable="true"
+               android:keyIcon="@drawable/aikbd_sym_keyboard_delete"
+               android:keyWidth="14.1%p" />
+       </Row>
+
+       <Row android:keyHeight="@dimen/aikbd_s_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap">
+           <Key
+               android:codes="-2"
+               android:keyEdgeFlags="left"
+               android:keyIcon="@drawable/aikbd_img_tastenumber"
+               android:keyWidth="12%p" android:horizontalGap="0.8%p"/>
+           <Key
+               android:codes="-6"
+               android:keyIcon="@drawable/aikbd_img_language"
+               android:keyWidth="12%p" />
+
+           <Key android:codes="44"
+               android:keyLabel=","
+               android:keyWidth="12%p" />
+
+           <Key
+               android:codes="32"
+               android:isRepeatable="true"
+               android:keyIcon="@drawable/aikbd_sym_keyboard_space"
+               android:keyWidth="36.5%p" />
+           <Key
+               android:codes="46"
+               android:keyLabel="."
+               android:keyWidth="12%p"
+               android:popupKeyboard="@xml/aikbd_keyboard_popup_template" />
+
+           <Key
+               android:codes="10"
+               android:keyEdgeFlags="right"
+               android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+               android:keyWidth="14.1%p" />
+       </Row>
+
+   </Keyboard>
+-->

@@ -1,0 +1,129 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 35
+    namespace="enliple.com.ckeyboard"
+    defaultConfig {
+        applicationId "enliple.com.ckeyboard"
+        minSdkVersion 21 // facebook sdk 사용위해 min version 15 이상 필요, 카카오톡 sdk 사용 위해 16 이상 필요
+
+        targetSdkVersion 35
+        versionCode 9
+        versionName "1.0.8"
+        multiDexEnabled true
+
+        // keyboard 추가
+        def addConstant = { constantName, constantValue ->
+            manifestPlaceholders = [(constantName): constantValue]
+            buildConfigField "String", "${constantName}", "\"${constantValue}\""
+        }
+//        addConstant("KEYBOARD_NAME", "캐시키보드")
+        // keyboard 추가 끝
+
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format('MMddHHmm')
+            outputFileName = "${variant.name}_ckeyboard_${variant.versionName}_${variant.versionCode}_${date}.apk"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keyboard_keystore.jks")
+            keyAlias "keyboard"
+            storePassword "shopul"
+            keyPassword "shopul"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+       //     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "keyboard"
+    productFlavors {
+        app {
+            resValue 'string', 'app_name', '캐시 키보드'
+            dimension "keyboard"
+        }
+
+        whowho {
+            resValue 'string', 'app_name', '후후'
+            dimension "keyboard"
+        }
+
+        okcashbag {
+            resValue 'string', 'app_name', 'OK Cashbag'
+            dimension "keyboard"
+        }
+    }
+
+    dexOptions {
+        // dex의 크기를 늘리기 위한 설정(2^16개 초과)
+        jumboMode true
+        // 앱 구동 시 자바 할당 힙을 지정
+        javaMaxHeapSize "4g"
+    }
+
+    // for kakaotalk
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+//    repositories{
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency { details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion '28.0.0' //app support library version
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+//repositories { flatDir { dirs 'libs' } }
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+//    implementation 'androidx.multidex:multidex:2.0.1'
+    // build 필수
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core:1.12.0'
+    implementation project(path: ':aikeyboard')
+    implementation files('libs\\rake-android-0.6.4.jar')
+    implementation files('libs\\OCBLogSentinelShuttle-28.jar')
+}

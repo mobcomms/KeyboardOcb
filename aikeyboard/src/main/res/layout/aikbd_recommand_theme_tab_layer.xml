@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/my_layer"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingBottom="22dp">
+
+                <TextView
+                    android:id="@+id/surprise_tlt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:text="깜짝! 미션 포인트"
+                    android:textColor="#bfbfbf"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/myTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="12dp"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:letterSpacing="-0.04"
+                    android:text="내 포인트"
+                    android:textColor="#bfbfbf"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/surprise_tlt"
+                    app:layout_constraintLeft_toRightOf="@+id/mid_dot"
+                    app:layout_constraintTop_toTopOf="@+id/surprise_tlt" />
+
+                <TextView
+                    android:id="@+id/tab_r_theme_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:includeFontPadding="false"
+                    android:text="추천 테마"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/surprise_tlt"
+                    app:layout_constraintLeft_toRightOf="@+id/mid_dot_1_1"
+                    app:layout_constraintTop_toTopOf="@+id/surprise_tlt" />
+
+
+                <View
+                    android:id="@+id/mid_dot_1_1"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/aikbd_mid_dot_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/surprise_tlt"
+                    app:layout_constraintLeft_toRightOf="@+id/myTitle"
+                    app:layout_constraintTop_toTopOf="@+id/surprise_tlt" />
+
+                <View
+                    android:id="@+id/mid_dot"
+                    android:layout_width="3dp"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/aikbd_mid_dot_gray"
+                    app:layout_constraintBottom_toBottomOf="@+id/surprise_tlt"
+                    app:layout_constraintLeft_toRightOf="@+id/surprise_tlt"
+                    app:layout_constraintTop_toTopOf="@+id/surprise_tlt" />
+
+                <View
+                    android:id="@+id/base1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="#000000"
+                    app:layout_constraintLeft_toLeftOf="@+id/tab_r_theme_2"
+                    app:layout_constraintRight_toRightOf="@+id/tab_r_theme_2"
+                    app:layout_constraintTop_toBottomOf="@+id/tab_r_theme_2" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/base1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/recommand_theme_recyclerview"
+                    android:scrollbars="none"
+                    android:overScrollMode="never"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

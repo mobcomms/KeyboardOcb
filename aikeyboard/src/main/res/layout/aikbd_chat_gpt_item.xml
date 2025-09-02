@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#ffffff"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/question_layer"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/me_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/aikbd_btn_gpt_me_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/question"
+            android:textIsSelectable="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_gpt_header_text_question_bg"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginLeft="12dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintStart_toEndOf="@+id/me_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/me_icon"
+            tools:text="Once upon Once upon Once upon " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer_layer"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/chat_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/aikbd_btn_gpt_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+<!--        <View-->
+<!--            android:id="@+id/answer_base"-->
+<!--            android:layout_width="1dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:background="#ff0000"-->
+<!--            app:layout_constraintLeft_toRightOf="@+id/chat_icon"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/chat_icon"-->
+<!--            android:layout_marginLeft="12dp"/>-->
+
+        <com.enliple.keyboard.ui.TypingTextView
+            android:id="@+id/answer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/chat_gpt_header_text_bg"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginLeft="12dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="11dp"
+            android:paddingBottom="11dp"
+            android:textColor="#000000"
+            android:textIsSelectable="true"
+            android:textSize="14dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintWidth_default="wrap"
+            app:layout_constraintStart_toEndOf="@+id/chat_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chat_icon"
+            tools:text="Once upon Once upon Once upon "
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/loading_layer"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="12dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:visibility="gone"
+            android:background="@drawable/chat_gpt_header_text_bg"
+            app:layout_constraintStart_toEndOf="@+id/chat_icon"
+            app:layout_constraintTop_toTopOf="@+id/chat_icon">
+
+            <ImageView
+                android:id="@+id/img_loading"
+                android:layout_width="43dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

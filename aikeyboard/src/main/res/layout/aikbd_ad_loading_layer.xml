@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ad_loading_layer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
+
+    <ImageView
+        android:id="@+id/img_loading"
+        android:layout_width="43dp"
+        android:layout_height="18dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:id="@+id/ad_fail_layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/aikbd_ad_fail_img"
+            android:layout_marginBottom="40dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="ChatGPT 이용권을 준비하고 있어요,\n잠시 후 다시 이용해주세요."
+            android:layout_below="@+id/img"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="여러분과의 대화를\nchatGPT가 기다리고 있어요,\n꼭 다시 찾아와주세요 :)"
+            android:layout_below="@+id/first"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textColor="#929292"
+            android:includeFontPadding="false"
+            android:layout_marginBottom="10dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

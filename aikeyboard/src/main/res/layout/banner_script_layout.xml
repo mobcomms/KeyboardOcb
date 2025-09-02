@@ -1,0 +1,87 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="2"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/left_bg"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/right_bg"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dummy_image"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"></WebView>
+
+    <RelativeLayout
+        android:id="@+id/ad_del"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true">
+
+        <RelativeLayout
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/aikbd_kb_search_close_icon" >
+
+            <RelativeLayout
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/aikbd_reward_close" >
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+<!--
+    <RelativeLayout
+        android:id="@+id/kl_del"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp">
+
+        <RelativeLayout
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/ad_del_bg">
+
+            <TextView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/aikbd_btn_key_close" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+-->
+</RelativeLayout>

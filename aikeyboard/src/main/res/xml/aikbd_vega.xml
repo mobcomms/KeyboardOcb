@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:verticalGap="@dimen/aikbd_keyboard_vertical_gap"
+    android:keyWidth="24.6%p">
+
+    <!--<Row android:keyHeight="@dimen/key_gap">-->
+        <!--<Key android:codes="-8080" android:keyEdgeFlags="left" android:keyWidth="15%p" />-->
+    <!--</Row>-->
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="114" android:keyLabel="ㄱㅋ" android:horizontalGap="0.8%p"/>
+        <Key android:codes="108" android:keyLabel="ㅣㅡ"/>
+        <Key android:codes="107" android:keyLabel="ㅏㅑ"/>
+        <Key android:codes="-5" android:keyIcon="@drawable/aikbd_sym_keyboard_delete" android:isRepeatable="true"/>/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="101" android:keyLabel="ㄷㅌ" android:horizontalGap="0.8%p"/>
+        <Key android:codes="115" android:keyLabel="ㄴㄹ"/>
+        <Key android:codes="106" android:keyLabel="ㅓㅕ"/>
+        <Key android:codes="32" android:keyIcon="@drawable/aikbd_sym_keyboard_space" android:isRepeatable="true"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height">
+        <Key android:codes="97" android:keyLabel="ㅁㅅ" android:horizontalGap="0.8%p"/>
+        <Key android:codes="113" android:keyLabel="ㅂㅍ"/>
+        <Key android:codes="104" android:keyLabel="ㅗㅛ"/>
+        <Key android:codes="46,63" android:keyLabel=".?" android:keyWidth="12.3%p" android:popupKeyboard="@xml/aikbd_keyboard_popup_nara_template"/>
+        <!--<Key android:codes="8231" android:keyLabel=".?" android:keyWidth="11%p"/>-->
+        <Key android:codes="10" android:keyIcon="@drawable/aikbd_sym_keyboard_return"
+            android:keyWidth="12.3%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <Row android:keyHeight="@dimen/aikbd_key_height" android:rowEdgeFlags="bottom" android:verticalGap="@dimen/aikbd_key_gap" >
+        <Key android:codes="119" android:keyLabel="ㅈㅊ" android:horizontalGap="0.8%p"/>
+        <Key android:codes="100" android:keyLabel="ㅇㅎ"/>
+        <Key android:codes="110" android:keyLabel="ㅜㅠ"/>
+        <Key android:codes="-2" android:keyIcon="@drawable/aikbd_img_tastenumber" android:keyWidth="12.5%p"/>
+        <Key android:codes="-6" android:keyIcon="@drawable/aikbd_img_language" android:keyWidth="12.5%p" android:keyEdgeFlags="right"/>
+    </Row>
+
+    <!--<Row android:rowEdgeFlags="bottom" android:keyHeight="0dp">-->
+        <!--<Key android:codes="-8080" android:keyEdgeFlags="left" android:keyWidth="15%p" />-->
+    <!--</Row>-->
+
+</Keyboard>

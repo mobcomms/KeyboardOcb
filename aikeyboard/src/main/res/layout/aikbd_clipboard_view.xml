@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/clip_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F1F3"
+    android:paddingLeft="3dp"
+    android:paddingRight="3dp"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/clip_recyclerView"
+        android:overScrollMode="never"
+        android:scrollbars="none"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:id="@+id/clip_empty_layer">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/empty_clip_top"
+                android:textColor="#666666"
+                android:includeFontPadding="false"
+                android:layout_marginBottom="15dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="14dp"
+                android:text="클립보드가 비어있어요."/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#acacac"
+                android:lineSpacingExtra="6dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/empty_clip_top"
+                android:includeFontPadding="false"
+                android:textSize="14dp"
+                android:text="복사한 내용이\n여기에 표시됩니다."/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
