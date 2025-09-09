@@ -317,7 +317,7 @@ public class ThemeManager {
         }
     }
 
-    public static NinePatchDrawable GetNinePatch(Context context, String name) {
+/*    public static NinePatchDrawable GetNinePatch(Context context, String name) {
         NinePatchDrawable dr = null;
         try {
             InputStream stream = new FileInputStream(name);
@@ -327,6 +327,26 @@ public class ThemeManager {
             e.printStackTrace();
         }
 
+        return dr;
+    }*/
+
+    // new FileInputStream로 inputstream을 열어놓고 close 시키는 부분이 없어 메모리 누수 발생 위험
+    public static NinePatchDrawable GetNinePatch(Context context, String name) {
+        NinePatchDrawable dr = null;
+        InputStream stream = null;
+        try {
+            stream = new FileInputStream(name);
+            Bitmap bitmap = BitmapFactory.decodeStream(stream);
+            dr = NinePatchBitmapFactory.createNinePatchDrawable(context.getResources(), bitmap);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException ignored) {}
+            }
+        }
         return dr;
     }
 
