@@ -1454,6 +1454,8 @@ public class LatinKeyboardView extends KeyboardView {
     }
 
     private void setBackDrawable(Key _key, Canvas canvas) {
+        if ( _key.codes[0] == -8081 )
+            return;
         int[] drawableState = _key.getCurrentDrawableState();
 
         if( mIsKorean && mKeyboardGubun == Common.MODE_CHUNJIIN_PLUS && _key.codes[0] == -226){
@@ -2564,7 +2566,7 @@ public class LatinKeyboardView extends KeyboardView {
 
     private Drawable getSpKeyIcon(int keyCode, boolean isTemp) {
         Drawable dr = null;
-        if ( isTemp ) {
+        if ( isTemp || keyCode == -8081 ) {
             return null;
         } else {
             if ( mThemeModel != null ) {

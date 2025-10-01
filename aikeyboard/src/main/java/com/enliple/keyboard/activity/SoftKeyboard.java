@@ -234,6 +234,9 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 
     private LatinKeyboard mQSymbolsKeyboard;
     private LatinKeyboard mQSymbolsKeyboard1;
+
+    private LatinKeyboard mQSymbolsKeyboard_35;
+    private LatinKeyboard mQSymbolsKeyboard1_35;
     private LatinKeyboard mSymbolsKeyboard;
     private LatinKeyboard mSymbolsShiftedKeyboard;
     private LatinKeyboard mSymbolsShiftedKeyboard1;
@@ -245,7 +248,10 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
     private LatinKeyboard mPhoneSymbolKeyboard;
     //    private LatinKeyboard mQwertyKeyboard;
     private LatinKeyboard mQwertyNum;
+    private LatinKeyboard mQwertyNum35;
     private LatinKeyboard mQwerty;
+    private LatinKeyboard mEQwerty;
+    private LatinKeyboard mQwerty35;
     private LatinKeyboard mEmojiKeyboard;
     private LatinKeyboard mEmoticonKeyboard;
     // special key definitions.
@@ -257,11 +263,13 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
     private boolean mHwCapsLock = false;
 
     private LatinKeyboard mQKoreanKeyboard;
+    private LatinKeyboard mQKoreanKeyboard35;
     private LatinKeyboard mKoreanKeyboard; // 쿼티 한글
     //    private LatinKeyboard mKoreanShiftedKeyboard;
     private LatinKeyboard mBackupKeyboard;
     private LatinKeyboard mSejongKeyboard; // 천지인
     private LatinKeyboard mDanKeyboard; // 단모음
+    private LatinKeyboard mDanKeyboard35;
     private LatinKeyboard mNaraKeyboard; // 나랏글
     private LatinKeyboard mCurKeyboard;
     private LatinKeyboard mSejongPlusKeyboard;
@@ -760,7 +768,7 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
     public void onInitializeInterface() {
         LogPrint.d("skkim onInitializeInterface");
 
-        if (mQwerty != null && mQwertyNum != null) {
+        if (mEQwerty != null && mQwertyNum != null) {
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
             // space has changed.
@@ -781,6 +789,8 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 
         mQSymbolsKeyboard = new LatinKeyboard(this, R.xml.aikbd_symbol_q_1); // 쿼티용 기호
         mQSymbolsKeyboard1 = new LatinKeyboard(this, R.xml.aikbd_symbol_q_2); // 쿼티용 기호 shift
+        mQSymbolsKeyboard_35 = new LatinKeyboard(this, R.xml.aikbd_symbol_q_1_35); // 쿼티용 기호
+        mQSymbolsKeyboard1_35 = new LatinKeyboard(this, R.xml.aikbd_symbol_q_2_35); // 쿼티용 기호 shift
         mSymbolsKeyboard = new LatinKeyboard(this, R.xml.aikbd_symbols); // 기호
         mNumberKeyboard = new LatinKeyboard(this, R.xml.aikbd_number); // 기호 SHIFT
         mNumberOnlyKeyboard = new LatinKeyboard(this, R.xml.aikbd_number_only); // mumber only
@@ -793,20 +803,28 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
         boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
         if (isQwertyNumSet) {
             mQwertyNum = new LatinKeyboard(this, R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+            mQwertyNum35 = new LatinKeyboard(this, R.xml.aikbd_qwerty_n_35); // 영문 쿼티 + 숫자
             mQwerty = new LatinKeyboard(this, R.xml.aikbd_qwerty); // 영문 쿼티
+            mQwerty35 = new LatinKeyboard(this, R.xml.aikbd_qwerty_35); // 영문 쿼티 target 35
             mQKoreanKeyboard = new LatinKeyboard(this, R.xml.aikbd_korean_n); // 한글
+            mQKoreanKeyboard35 = new LatinKeyboard(this, R.xml.aikbd_korean_n_35); // 한글
 //            mKoreanShiftedKeyboard = new LatinKeyboard(this, R.xml.aikbd_n_korean_shifted, true); // 한글 SHIFT
             mSejongKeyboard = new LatinKeyboard(this, R.xml.aikbd_sejong); // 천지인 keyboard
             mDanKeyboard = new LatinKeyboard(this, R.xml.aikbd_dan); // 단모음 keyboard
+            mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
             mNaraKeyboard = new LatinKeyboard(this, R.xml.aikbd_nara); // 나랏글 keyboard
             mSejongPlusKeyboard = new LatinKeyboard(this, R.xml.aikbd_sejong_plus);
         } else {
             mQwertyNum = new LatinKeyboard(this, R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+            mQwertyNum35 = new LatinKeyboard(this, R.xml.aikbd_qwerty_n_35);
             mQwerty = new LatinKeyboard(this, R.xml.aikbd_qwerty); // 영문 쿼티
+            mQwerty35 = new LatinKeyboard(this, R.xml.aikbd_qwerty_35); // 영문 쿼티 target 35
             mQKoreanKeyboard = new LatinKeyboard(this, R.xml.aikbd_korean); // 한글
+            mQKoreanKeyboard35 = new LatinKeyboard(this, R.xml.aikbd_korean_35); // 한글
 //            mKoreanShiftedKeyboard = new LatinKeyboard(this, R.xml.aikbd_korean_shifted, true); // 한글 SHIFT
             mSejongKeyboard = new LatinKeyboard(this, R.xml.aikbd_sejong); // 천지인 keyboard
             mDanKeyboard = new LatinKeyboard(this, R.xml.aikbd_dan); // 단모음 keyboard
+            mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
             mNaraKeyboard = new LatinKeyboard(this, R.xml.aikbd_nara); // 나랏글 keyboard
             mSejongPlusKeyboard = new LatinKeyboard(this, R.xml.aikbd_sejong_plus);
         }
@@ -816,6 +834,16 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 
         WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         int currentRatation = windowService.getDefaultDisplay().getRotation();
+        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                mEQwerty = mQwerty35;
+            } else
+                mEQwerty = mQwerty;
+        } else
+            mEQwerty = mQwerty;
+        mEmojiKeyboard = new LatinKeyboard(this, R.xml.aikbd_emoji);
+        mEmoticonKeyboard = new LatinKeyboard(this, R.xml.aikbd_emoticon);
+
         LogPrint.d("keyboard_height currentRatation :: " + currentRatation);
         int keyHeightLevel = 0;
         if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
@@ -845,6 +873,8 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                 LogPrint.d("kauto qAutomata 10");
                 kauto = qAutomata;
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 LogPrint.d("kauto cAutomata 11");
                 kauto = cAutomata;
@@ -854,15 +884,30 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
             LogPrint.d("kauto qAutomata 12");
             kauto = qAutomata;
             mKoreanKeyboard = mQKoreanKeyboard;
+            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                    mEQwerty = mQwerty35;
+                    mKoreanKeyboard = mQKoreanKeyboard35;
+                } else
+                    mEQwerty = mQwerty;
+            } else
+                mEQwerty = mQwerty;
         } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
             LogPrint.d("kauto dAutomata 13");
             kauto = dAutomata;
             mKoreanKeyboard = mDanKeyboard;
+            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mDanKeyboard35;
+            }
+
         } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                 LogPrint.d("kauto qAutomata 14");
                 kauto = qAutomata;
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 LogPrint.d("kauto nAutomata 15");
                 kauto = nAutomata;
@@ -873,6 +918,8 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                 LogPrint.d("kauto qAutomata 16");
                 kauto = qAutomata;
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 LogPrint.d("kauto cpAutomata 17");
                 kauto = cpAutomata;
@@ -948,14 +995,21 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                             if (mMainKeyboardView != null) {
                                 Keyboard curKeyboard = mMainKeyboardView.getKeyboard();
                                 boolean isQwertySymbol = false;
-                                if (curKeyboard == mQwerty || curKeyboard == mQwertyNum) {
+                                if (curKeyboard == mEQwerty || curKeyboard == mQwertyNum || curKeyboard == mQwertyNum35) {
                                     isQwertySymbol = true;
                                 } else if (curKeyboard == mKoreanKeyboard) {
                                     if (mKoreanKeyboardMode == Common.MODE_QUERTY || mKoreanKeyboardMode == Common.MODE_DAN)
                                         isQwertySymbol = true;
                                 }
                                 if (isQwertySymbol) {
+                                    WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                                    int currentRatation = windowService.getDefaultDisplay().getRotation();
                                     mMainKeyboardView.setKeyboard(mQSymbolsKeyboard); // 기호 클릭 시 쿼티 심볼로 설정
+                                    if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                        if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                            mMainKeyboardView.setKeyboard(mQSymbolsKeyboard_35); // 기호 클릭 시 쿼티 심볼로 설정
+                                    }
+
                                     mMainKeyboardView.selectKeyboard(MainKeyboardView.GUBUN_KEYBOARD);
                                 } else {
                                     mMainKeyboardView.setKeyboard(mSymbolsKeyboard); // 기호 클릭 시 논 쿼티 심볼로 설정
@@ -965,13 +1019,18 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                         } else if (primaryKey == -6) {
                             if (mMainKeyboardView != null) {
                                 Keyboard curKeyboard = mMainKeyboardView.getKeyboard();
-                                if (curKeyboard == mQwerty) {
-                                    mCurKeyboard = mQwerty;
+                                if (curKeyboard == mEQwerty) {
+                                    mCurKeyboard = mEQwerty;
                                     mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 쿼티의 영문(not num)으로 설정
 //                                    mMainKeyboardView.setKeyboard(mQwertyKeyboard);
                                     setKeyBoardMode(false, -1, 11);
                                 } else if (curKeyboard == mQwertyNum) {
                                     mCurKeyboard = mQwertyNum;
+                                    mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 쿼티의 영문(num)으로 설정
+//                                    mMainKeyboardView.setKeyboard(mQwertyKeyboard);
+                                    setKeyBoardMode(false, -1, 21);
+                                } else if (curKeyboard == mQwertyNum35) {
+                                    mCurKeyboard = mQwertyNum35;
                                     mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 쿼티의 영문(num)으로 설정
 //                                    mMainKeyboardView.setKeyboard(mQwertyKeyboard);
                                     setKeyBoardMode(false, -1, 21);
@@ -981,22 +1040,40 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                                     if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN) {
                                         if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                             mKoreanKeyboard = mQKoreanKeyboard;
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mKoreanKeyboard = mQKoreanKeyboard35;
                                         } else {
                                             mKoreanKeyboard = mSejongKeyboard;
                                         }
                                     } else if (mKoreanKeyboardMode == Common.MODE_QUERTY) {
                                         mKoreanKeyboard = mQKoreanKeyboard;
+                                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                                                mKoreanKeyboard = mQKoreanKeyboard35;
+                                                mEQwerty = mQwerty35;
+                                            } else
+                                                mEQwerty = mQwerty;
+                                        } else
+                                            mEQwerty = mQwerty;
                                     } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
                                         mKoreanKeyboard = mDanKeyboard;
+                                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mKoreanKeyboard = mDanKeyboard35;
+                                        }
                                     } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
                                         if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                             mKoreanKeyboard = mQKoreanKeyboard;
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mKoreanKeyboard = mQKoreanKeyboard35;
                                         } else {
                                             mKoreanKeyboard = mNaraKeyboard;
                                         }
                                     } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
                                         if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                             mKoreanKeyboard = mQKoreanKeyboard;
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mKoreanKeyboard = mQKoreanKeyboard35;
                                         } else {
                                             mKoreanKeyboard = mSejongPlusKeyboard;
                                         }
@@ -1008,17 +1085,23 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 //                                    mMainKeyboardView.setKeyboard(mKoreanKeyboard);
                                     setKeyBoardMode(true, -1, 12);
 
-                                    if (mKoreanKeyboard == mQKoreanKeyboard)
+                                    if (mKoreanKeyboard == mQKoreanKeyboard || mKoreanKeyboard == mQKoreanKeyboard35 )
                                         ((LatinKeyboardView) mMainKeyboardView.getKeyboardView()).setKeyboardMode(Common.MODE_QUERTY);
                                 } else {
                                     // 2017.05.02 mNoKorean flag 삭제
                                     if (!kauto.IsKoreanMode()) {
 //                                    if ((mNoKorean || !kauto.IsKoreanMode())) {
                                         boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                                             mCurKeyboard = mQwertyNum;
-                                        else
-                                            mCurKeyboard = mQwerty;
+                                            WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                                            int currentRatation = windowService.getDefaultDisplay().getRotation();
+                                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mCurKeyboard = mQwertyNum35;
+                                            }
+                                        } else
+                                            mCurKeyboard = mEQwerty;
                                         setKeyBoardMode(false, -1, 13);
                                     } else {
                                         WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -1026,22 +1109,40 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                                         if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mSejongKeyboard;
                                             }
                                         } else if (mKoreanKeyboardMode == Common.MODE_QUERTY) {
                                             mKoreanKeyboard = mQKoreanKeyboard;
+                                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                                                    mEQwerty = mQwerty35;
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
+                                                } else
+                                                    mEQwerty = mQwerty;
+                                            } else
+                                                mEQwerty = mQwerty;
                                         } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
                                             mKoreanKeyboard = mDanKeyboard;
+                                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mDanKeyboard35;
+                                            }
                                         } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mNaraKeyboard;
                                             }
                                         } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mSejongPlusKeyboard;
                                             }
@@ -1050,7 +1151,7 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                                         mCurKeyboard = mKoreanKeyboard;
 
                                         setKeyBoardMode(true, -1, 14);
-                                        if (mKoreanKeyboard == mQKoreanKeyboard)
+                                        if (mKoreanKeyboard == mQKoreanKeyboard || mKoreanKeyboard == mQKoreanKeyboard35)
                                             ((LatinKeyboardView) mMainKeyboardView.getKeyboardView()).setKeyboardMode(Common.MODE_QUERTY);
                                     }
                                 }
@@ -1143,6 +1244,12 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
         } else if (kind == Common.MODE_DAN) {
             if (mMainKeyboardView != null)
                 mMainKeyboardView.setPreviewEnabled(mIsPreviewSet, true);
+            WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+            int currentRatation = windowService.getDefaultDisplay().getRotation();
+            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    return mDanKeyboard35;
+            }
             return mDanKeyboard;
         } else if (kind == Common.MODE_CHUNJIIN_PLUS) {
             if (mMainKeyboardView != null)
@@ -1270,14 +1377,22 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 
                 //Keyboard curKeyboard = mMainKeyboardView.getKeyboard();
                 boolean isQwertySymbol = false;
-                if (mCurKeyboard == mQwerty || mCurKeyboard == mQwertyNum) {
+                if (mCurKeyboard == mEQwerty || mCurKeyboard == mQwertyNum || mCurKeyboard == mQwertyNum35) {
                     isQwertySymbol = true;
                 } else if (mCurKeyboard == mKoreanKeyboard) {
                     if (mKoreanKeyboardMode == Common.MODE_QUERTY || mKoreanKeyboardMode == Common.MODE_DAN)
                         isQwertySymbol = true;
                 }
-                if (isQwertySymbol)
+                if (isQwertySymbol) {
                     mCurKeyboard = mQSymbolsKeyboard;
+                    WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                    int currentRatation = windowService.getDefaultDisplay().getRotation();
+                    if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                        if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                            mCurKeyboard = mQSymbolsKeyboard_35;
+                    }
+                }
+
                 else
                     mCurKeyboard = mSymbolsKeyboard;
                 setKeyBoardMode(false, SYMBOL_KEYBOARD, 27);
@@ -1331,10 +1446,16 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
 //                if ((mNoKorean || !kauto.IsKoreanMode())) {
                     boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
                     KeyboardLogPrint.d("skkim isQwertyNumSet :: " + isQwertyNumSet);
-                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                         mCurKeyboard = mQwertyNum;
-                    else
-                        mCurKeyboard = mQwerty;
+                        WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                        int currentRatation = windowService.getDefaultDisplay().getRotation();
+                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                mCurKeyboard = mQwertyNum35;
+                        }
+                    } else
+                        mCurKeyboard = mEQwerty;
                     setKeyBoardMode(false, -1, 28);
                 } else {
                     if (mKoreanKeyboardMode == Common.MODE_QUERTY) {
@@ -1343,6 +1464,12 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                         mCurKeyboard = mSejongKeyboard;
                     } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
                         mCurKeyboard = mDanKeyboard;
+                        WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                        int currentRatation = windowService.getDefaultDisplay().getRotation();
+                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                mCurKeyboard = mDanKeyboard35;
+                        }
                     } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
                         mCurKeyboard = mNaraKeyboard;
                     } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
@@ -1365,10 +1492,16 @@ public class SoftKeyboard extends InputMethodService implements KeyboardView.OnK
                     setKeyBoardMode(true, -1, 30);
                 } else {
                     boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                         mCurKeyboard = mQwertyNum;
-                    else
-                        mCurKeyboard = mQwerty;
+                        WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                        int currentRatation = windowService.getDefaultDisplay().getRotation();
+                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                mCurKeyboard = mQwertyNum35;
+                        }
+                    } else
+                        mCurKeyboard = mEQwerty;
                     setKeyBoardMode(false, -1, 31);
                 }
 
@@ -2319,6 +2452,8 @@ mKeyboardActiveCount++;
                 kauto = qAutomata;
                 LogPrint.d("kauto qAutomata 1");
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 kauto = cAutomata;
                 LogPrint.d("kauto cAutomata 2");
@@ -2328,15 +2463,23 @@ mKeyboardActiveCount++;
             kauto = qAutomata;
             LogPrint.d("kauto qAutomata 3");
             mKoreanKeyboard = mQKoreanKeyboard;
+            mKoreanKeyboard = mQKoreanKeyboard35;
+
         } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
             LogPrint.d("kauto dAutomata 4");
             kauto = dAutomata;
             mKoreanKeyboard = mDanKeyboard;
+            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mDanKeyboard35;
+            }
         } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                 kauto = qAutomata;
                 LogPrint.d("kauto qAutomata 5");
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 LogPrint.d("kauto nAutomata 6");
                 kauto = nAutomata;
@@ -2347,6 +2490,8 @@ mKeyboardActiveCount++;
                 LogPrint.d("kauto qAutomata 7");
                 kauto = qAutomata;
                 mKoreanKeyboard = mQKoreanKeyboard;
+                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                    mKoreanKeyboard = mQKoreanKeyboard35;
             } else {
                 LogPrint.d("kauto cpAutomata 8");
                 kauto = cpAutomata;
@@ -2392,23 +2537,31 @@ mKeyboardActiveCount++;
                         kauto.FinishAutomataWithoutInput();
                     }
                     boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                    if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                         mCurKeyboard = mQwertyNum;
-                    else
-                        mCurKeyboard = mQwerty;
+                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                mCurKeyboard = mQwertyNum35;
+                        }
+                    } else
+                        mCurKeyboard = mEQwerty;
                     setKeyBoardMode(false, -1, 37);
                 } else {
                     if (kauto.IsKoreanMode()) {
                         mCurKeyboard = mKoreanKeyboard;
                         setKeyBoardMode(true, -1, 38);
-                        if (mKoreanKeyboard == mQKoreanKeyboard)
+                        if (mKoreanKeyboard == mQKoreanKeyboard || mKoreanKeyboard == mQKoreanKeyboard35)
                             ((LatinKeyboardView) mMainKeyboardView.getKeyboardView()).setKeyboardMode(Common.MODE_QUERTY);
                     } else {
                         boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                             mCurKeyboard = mQwertyNum;
-                        else
-                            mCurKeyboard = mQwerty;
+                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                    mCurKeyboard = mQwertyNum35;
+                            }
+                        } else
+                            mCurKeyboard = mEQwerty;
                         setKeyBoardMode(false, -1, 39);
                     }
                 }
@@ -2687,7 +2840,7 @@ mKeyboardActiveCount++;
                                 if (mMainKeyboardView != null) {
                                     Keyboard curKeyboard = mMainKeyboardView.getKeyboard();
                                     boolean isQwertySymbol = false;
-                                    if (curKeyboard == mQwerty || curKeyboard == mQwertyNum) {
+                                    if (curKeyboard == mEQwerty || curKeyboard == mQwertyNum || curKeyboard == mQwertyNum35) {
                                         isQwertySymbol = true;
                                     } else if (curKeyboard == mKoreanKeyboard) {
                                         if (mKoreanKeyboardMode == Common.MODE_QUERTY || mKoreanKeyboardMode == Common.MODE_DAN)
@@ -2695,6 +2848,12 @@ mKeyboardActiveCount++;
                                     }
                                     if (isQwertySymbol) {
                                         mMainKeyboardView.setKeyboard(mQSymbolsKeyboard); // 기호 클릭 시 쿼티 심볼로 설정
+                                        WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                                        int currentRatation = windowService.getDefaultDisplay().getRotation();
+                                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mMainKeyboardView.setKeyboard(mQSymbolsKeyboard_35); // 기호 클릭 시 쿼티 심볼로 설정
+                                        }
                                         mMainKeyboardView.selectKeyboard(MainKeyboardView.GUBUN_KEYBOARD);
                                     } else {
                                         mMainKeyboardView.setKeyboard(mSymbolsKeyboard); // 기호 클릭 시 논 쿼티 심볼로 설정
@@ -2704,13 +2863,19 @@ mKeyboardActiveCount++;
                             } else if (primaryKey == -6) {
                                 if (mMainKeyboardView != null) {
                                     Keyboard curKeyboard = mMainKeyboardView.getKeyboard();
-                                    if (curKeyboard == mQwerty) {
-                                        mCurKeyboard = mQwerty;
+                                    if (curKeyboard == mEQwerty) {
+                                        mCurKeyboard = mEQwerty;
                                         mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 쿼티의 영문(not num)으로 설정
 //                                    mMainKeyboardView.setKeyboard(mQwertyKeyboard);
                                         setKeyBoardMode(false, -1, 11);
                                     } else if (curKeyboard == mQwertyNum) {
                                         mCurKeyboard = mQwertyNum;
+                                        WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                                        int currentRatation = windowService.getDefaultDisplay().getRotation();
+                                        if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                            if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                mCurKeyboard = mQwertyNum35;
+                                        }
                                         mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 쿼티의 영문(num)으로 설정
 //                                    mMainKeyboardView.setKeyboard(mQwertyKeyboard);
                                         setKeyBoardMode(false, -1, 21);
@@ -2720,22 +2885,41 @@ mKeyboardActiveCount++;
                                         if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mSejongKeyboard;
                                             }
                                         } else if (mKoreanKeyboardMode == Common.MODE_QUERTY) {
                                             mKoreanKeyboard = mQKoreanKeyboard;
+                                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                                                    mEQwerty = mQwerty35;
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
+                                                } else
+                                                    mEQwerty = mQwerty;
+                                            } else
+                                                mEQwerty = mQwerty;
+
                                         } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
                                             mKoreanKeyboard = mDanKeyboard;
+                                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mDanKeyboard35;
+                                            }
                                         } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mNaraKeyboard;
                                             }
                                         } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
                                             if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                    mKoreanKeyboard = mQKoreanKeyboard35;
                                             } else {
                                                 mKoreanKeyboard = mSejongPlusKeyboard;
                                             }
@@ -2747,17 +2931,23 @@ mKeyboardActiveCount++;
 //                                    mMainKeyboardView.setKeyboard(mKoreanKeyboard);
                                         setKeyBoardMode(true, -1, 12);
 
-                                        if (mKoreanKeyboard == mQKoreanKeyboard)
+                                        if (mKoreanKeyboard == mQKoreanKeyboard || mKoreanKeyboard == mQKoreanKeyboard35)
                                             ((LatinKeyboardView) mMainKeyboardView.getKeyboardView()).setKeyboardMode(Common.MODE_QUERTY);
                                     } else {
                                         // 2017.05.02 mNoKorean flag 삭제
                                         if (!kauto.IsKoreanMode()) {
 //                                    if ((mNoKorean || !kauto.IsKoreanMode())) {
                                             boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                                            if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                                            if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                                                 mCurKeyboard = mQwertyNum;
-                                            else
-                                                mCurKeyboard = mQwerty;
+                                                WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                                                int currentRatation = windowService.getDefaultDisplay().getRotation();
+                                                if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                        mCurKeyboard = mQwertyNum35;
+                                                }
+                                            } else
+                                                mCurKeyboard = mEQwerty;
                                             setKeyBoardMode(false, -1, 13);
                                         } else {
                                             WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -2765,22 +2955,40 @@ mKeyboardActiveCount++;
                                             if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN) {
                                                 if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                     mKoreanKeyboard = mQKoreanKeyboard;
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                        mKoreanKeyboard = mQKoreanKeyboard35;
                                                 } else {
                                                     mKoreanKeyboard = mSejongKeyboard;
                                                 }
                                             } else if (mKoreanKeyboardMode == Common.MODE_QUERTY) {
                                                 mKoreanKeyboard = mQKoreanKeyboard;
+                                                if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                                                        mEQwerty = mQwerty35;
+                                                        mKoreanKeyboard = mQKoreanKeyboard35;
+                                                    } else
+                                                        mEQwerty = mQwerty;
+                                                } else
+                                                    mEQwerty = mQwerty;
                                             } else if (mKoreanKeyboardMode == Common.MODE_DAN) {
                                                 mKoreanKeyboard = mDanKeyboard;
+                                                if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                        mKoreanKeyboard = mDanKeyboard35;
+                                                }
                                             } else if (mKoreanKeyboardMode == Common.MODE_NARA) {
                                                 if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                     mKoreanKeyboard = mQKoreanKeyboard;
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                        mKoreanKeyboard = mQKoreanKeyboard35;
                                                 } else {
                                                     mKoreanKeyboard = mNaraKeyboard;
                                                 }
                                             } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
                                                 if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
                                                     mKoreanKeyboard = mQKoreanKeyboard;
+                                                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                                        mKoreanKeyboard = mQKoreanKeyboard35;
                                                 } else {
                                                     mKoreanKeyboard = mSejongPlusKeyboard;
                                                 }
@@ -2789,7 +2997,7 @@ mKeyboardActiveCount++;
                                             mCurKeyboard = mKoreanKeyboard;
 
                                             setKeyBoardMode(true, -1, 14);
-                                            if (mKoreanKeyboard == mQKoreanKeyboard)
+                                            if (mKoreanKeyboard == mQKoreanKeyboard || mKoreanKeyboard == mQKoreanKeyboard35)
                                                 ((LatinKeyboardView) mMainKeyboardView.getKeyboardView()).setKeyboardMode(Common.MODE_QUERTY);
                                         }
                                     }
@@ -2871,6 +3079,13 @@ mKeyboardActiveCount++;
             LogPrint.d("kauto qAutomata 9 backup에 kauto 넣어놓고 q로 kauto를 변경");
             kauto = qAutomata;
             mKoreanKeyboard = mQKoreanKeyboard;
+            WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+            int currentRatation = windowService.getDefaultDisplay().getRotation();
+            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                if (Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM)
+                    mKoreanKeyboard = mQKoreanKeyboard35;
+            }
+
             hide();
         }
 
@@ -3089,7 +3304,8 @@ mKeyboardActiveCount++;
         KeyboardLogPrint.w("SoftKeyboard updateShiftKeyState, position :: " + position);
         if (attr != null && mMainKeyboardView != null) {
             if (mKoreanKeyboardMode == Common.MODE_QUERTY || mKoreanKeyboardMode == Common.MODE_DAN || mKoreanKeyboardMode == Common.MODE_NARA || mKoreanKeyboardMode == Common.MODE_CHUNJIIN_PLUS) {
-                if (mQwertyNum == mMainKeyboardView.getKeyboard() || mQwerty == mMainKeyboardView.getKeyboard()) {
+                if (mQwertyNum == mMainKeyboardView.getKeyboard() || mEQwerty == mMainKeyboardView.getKeyboard()
+                        || mQwertyNum35 == mMainKeyboardView.getKeyboard()) {
                     int caps = 0;
                     EditorInfo ei = getCurrentInputEditorInfo();
                     if (ei != null && ei.inputType != EditorInfo.TYPE_NULL) {
@@ -3102,7 +3318,8 @@ mKeyboardActiveCount++;
                         mMainKeyboardView.setShifted(false, 0); // updateShiftKeyState 키보드종류가 쿼티, 단, 나라 이면서 영문키보드일 경우 setShifted false
                         KeyboardLogPrint.e("setShift, updateShiftKeyState 키보드 종류가 쿼티, 단, 나라 이면서 영문키보드일 경우 setShift false");
                     }
-                } else if (mQKoreanKeyboard == mMainKeyboardView.getKeyboard()) {
+                } else if (mQKoreanKeyboard == mMainKeyboardView.getKeyboard()
+                        || mQKoreanKeyboard35 == mMainKeyboardView.getKeyboard()) {
 //                    mKoreanShiftedKeyboard.setShifted(false);
 //                    setKeyBoardMode(true, -1);
 //                    mMainKeyboardView.setKeyboard(mKoreanKeyboard);
@@ -3120,7 +3337,8 @@ mKeyboardActiveCount++;
                     KeyboardLogPrint.e("setShift, updateShiftKeyState 키보드 종류가 쿼티, 단, 나라 이면서 한글쿼티, 영문쿼티가 아닐 경우");
                 }
             } else if (mKoreanKeyboardMode == Common.MODE_CHUNJIIN) {
-                if (mQwerty == mMainKeyboardView.getKeyboard() || mQwertyNum == mMainKeyboardView.getKeyboard()) {
+                if (mEQwerty == mMainKeyboardView.getKeyboard() || mQwertyNum == mMainKeyboardView.getKeyboard()
+                        || mQwertyNum35 == mMainKeyboardView.getKeyboard()) {
                     int caps = 0;
                     EditorInfo ei = getCurrentInputEditorInfo();
                     if (ei != null && ei.inputType != EditorInfo.TYPE_NULL) {
@@ -3133,7 +3351,8 @@ mKeyboardActiveCount++;
                         mMainKeyboardView.setShifted(false, 2); // updateShiftKeyState 키보드모드가 천지인이면서 영문쿼티키보드일 경우
                         KeyboardLogPrint.d("setShift, updateShiftKeyState 키보드모드가 천지인이면서 영문쿼티키보드일 경우");
                     }
-                } else if (mQKoreanKeyboard == mMainKeyboardView.getKeyboard()) {
+                } else if (mQKoreanKeyboard == mMainKeyboardView.getKeyboard()
+                        || mQKoreanKeyboard35 == mMainKeyboardView.getKeyboard()) {
                     mMainKeyboardView.setShifted(false, 3); // updateShiftKeyState 키보드모드가 천지인이면서 쿼티 한글일 경우, 한글 천지인이나와야하지만 가로모드일 경우에는 천지인 키보드라도 쿼티 키보드가 나와야함, setShift false
                     KeyboardLogPrint.e("setShift, updateShiftKeyState 키보드모드가 천지인이면서 쿼티 한글일 경우, 한글 천지인이나와야하지만 가로모드일 경우에는 천지인 키보드라도 쿼티 키보드가 나와야하므로");
                     WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
@@ -3310,7 +3529,7 @@ mKeyboardActiveCount++;
     private final static int[] NUMBER_63_CODE_MAP = {46, 44, 45, 47}; //.,-/
     public void onKey(int primaryCode, int[] keyCodes) {
         KeyboardLogPrint.d("skkim onKey primaryCode :: " + primaryCode);
-        if ( primaryCode == 0 )
+        if (primaryCode == 0 || primaryCode == -8080 || primaryCode == -8081)
             return;
         //lastEnteredPrimaryCode = primaryCode;
         if (primaryCode > 0 || primaryCode != 32 || primaryCode != 10)
@@ -3545,7 +3764,8 @@ mKeyboardActiveCount++;
         } else if (primaryCode == Keyboard.KEYCODE_DELETE) {
             handleBackspace();
         } else if (primaryCode == Keyboard.KEYCODE_SHIFT) { // 대소문자 변경 등 왼쪽 시프트 키
-            if (mMainKeyboardView != null && (mQwertyNum == mMainKeyboardView.getKeyboard() || mQwerty == mMainKeyboardView.getKeyboard())) { // 영문 쿼티 키보드일 경우
+            if (mMainKeyboardView != null && (mQwertyNum == mMainKeyboardView.getKeyboard()
+                    || mEQwerty == mMainKeyboardView.getKeyboard()) || mQwertyNum35 == mMainKeyboardView.getKeyboard()) { // 영문 쿼티 키보드일 경우
                 if (mShiftState == SHIFT_STATE_LOWER_CASE || mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)
                     handleShift();
                 setShiftState();
@@ -3560,24 +3780,30 @@ mKeyboardActiveCount++;
             // Show a menu or somethin'
             // 2017.05.02 mNoKorean flag 삭제
             if (mMainKeyboardView != null) {
-                if (mCurKeyboard == mSymbolsKeyboard || mCurKeyboard == mSymbolsShiftedKeyboard || mCurKeyboard == mSymbolsShiftedKeyboard1 || mCurKeyboard == mQSymbolsKeyboard
-                        || mCurKeyboard == mQSymbolsKeyboard1 || mCurKeyboard == mNumberKeyboard) {
+                if (mCurKeyboard == mSymbolsKeyboard || mCurKeyboard == mSymbolsShiftedKeyboard || mCurKeyboard == mSymbolsShiftedKeyboard1
+                        || mCurKeyboard == mQSymbolsKeyboard || mCurKeyboard == mQSymbolsKeyboard_35 || mCurKeyboard == mQSymbolsKeyboard1
+                        || mCurKeyboard == mQSymbolsKeyboard1_35 || mCurKeyboard == mNumberKeyboard) {
 
                     if (kauto.IsKoreanMode()) {
                         mCurKeyboard = mKoreanKeyboard;
                         setKeyBoardMode(true, -1, 17);
                     } else {
                         boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                             mCurKeyboard = mQwertyNum;
-                        else
-                            mCurKeyboard = mQwerty;
+                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                    mCurKeyboard = mQwertyNum35;
+                            }
+                        } else
+                            mCurKeyboard = mEQwerty;
                         setKeyBoardMode(false, -1, 18);
                     }
                     mMainKeyboardView.setKeyboard(mCurKeyboard); // 한영버튼 클릭 시 한글 키보드 혹은 영문키보드로 mCurKeyboard 설정
                     if (mComposing.length() > 0)
                         commitTyped(inputConnection);
-                    if (mCurKeyboard == mQwertyNum || mCurKeyboard == mQwerty || mCurKeyboard == mKoreanKeyboard) {
+                    if (mCurKeyboard == mQwertyNum || mCurKeyboard == mEQwerty
+                            || mCurKeyboard == mKoreanKeyboard || mCurKeyboard == mQwertyNum35) {
                         if (mCurKeyboard == mKoreanKeyboard) {
                             LogPrint.d("kksskk onKey shift false1");
                             mCurKeyboard.setShifted(false); // onKey, keycode alt, 현재의 키보드가 심볼 또는 숫자 , curkeyboard가 쿼티 또는 한글, 키보드 종류 무관하게 기호 숫자 키패드에서 한/영 버튼 눌렀을 경우
@@ -3595,10 +3821,17 @@ mKeyboardActiveCount++;
                 } else {
                     if (kauto.IsKoreanMode()) {
                         boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
-                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet)
+                        if (mKoreanKeyboardMode == Common.MODE_QUERTY && isQwertyNumSet) {
                             mCurKeyboard = mQwertyNum;
-                        else
-                            mCurKeyboard = mQwerty;
+                            if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                                if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                                    mCurKeyboard = mQwertyNum35;
+                            }
+                        } else {
+                            LogPrint.d("ttss mCurKeybaord null @@@@@ ##%%%## mCurKeyboard = mEQwerty");
+                            mCurKeyboard = mEQwerty;
+                        }
+
                         setKeyBoardMode(false, -1, 19);
                     } else {
                         mCurKeyboard = mKoreanKeyboard;
@@ -3608,7 +3841,8 @@ mKeyboardActiveCount++;
                     if (mComposing.length() > 0)
                         commitTyped(inputConnection);
                     kauto.ToggleMode();
-                    if (mCurKeyboard == mQwertyNum || mCurKeyboard == mQwerty || mCurKeyboard == mKoreanKeyboard) {
+                    if (mCurKeyboard == mQwertyNum || mCurKeyboard == mEQwerty
+                            || mCurKeyboard == mKoreanKeyboard || mCurKeyboard == mQwertyNum35) {
                         if (mCurKeyboard == mKoreanKeyboard) {
                             LogPrint.d("kksskk onKey shift false1-1");
                             mCurKeyboard.setShifted(false); // onKey, keycode alt, 영문 키보드에서 한글 키보드로 바뀌었을 때 shift false로 setting 함
@@ -3705,7 +3939,7 @@ mKeyboardActiveCount++;
                         isQwertySymbol = true;
                     }
                 } else {
-                    if (mCurKeyboard == mQwerty || mCurKeyboard == mQwertyNum) {
+                    if (mCurKeyboard == mEQwerty || mCurKeyboard == mQwertyNum || mCurKeyboard == mQwertyNum35) {
                         isQwertySymbol = true;
                     }
                 }
@@ -3716,9 +3950,14 @@ mKeyboardActiveCount++;
                 if (isQwertySymbol) {
                     mBackupKeyboard = mCurKeyboard;
                     mCurKeyboard = mQSymbolsKeyboard;
+                    if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                        if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM )
+                            mCurKeyboard = mQSymbolsKeyboard_35;
+                    }
                     setKeyBoardMode(false, SYMBOL_KEYBOARD, 26);
 
-                    if (mCurKeyboard == mQSymbolsKeyboard || mCurKeyboard == mQSymbolsKeyboard1) {
+                    if (mCurKeyboard == mQSymbolsKeyboard || mCurKeyboard == mQSymbolsKeyboard1
+                            || mCurKeyboard ==mQSymbolsKeyboard_35 || mCurKeyboard == mQSymbolsKeyboard1_35) {
                         mCurKeyboard.setShifted(false); // 천지인이 아니면서 기호/123 눌렀을 경우 현재 키보드가 심볼
                         KeyboardLogPrint.e("setShift, 천지인이 아니면서 기호/123 눌렀을 경우 현재 키보드가 심볼");
                     }
@@ -4316,7 +4555,7 @@ mKeyboardActiveCount++;
 //                delete();
             }
         }
-        if (mCurKeyboard == mQwerty || mCurKeyboard == mQwertyNum) {
+        if (mCurKeyboard == mEQwerty || mCurKeyboard == mQwertyNum || mCurKeyboard == mQwertyNum35) {
             if (mShiftState != SHIFT_STATE_ONLY_UPPER_CASE) {
                 KeyboardLogPrint.e("backpressed shift, shift state is not upper only");
                 updateShiftKeyState(getCurrentInputEditorInfo(), 5); //backpressed
@@ -4365,7 +4604,7 @@ mKeyboardActiveCount++;
         WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         int currentRatation = windowService.getDefaultDisplay().getRotation();
         Keyboard currentKeyboard = mMainKeyboardView.getKeyboard();
-        if (mQwerty == currentKeyboard || mQwertyNum == currentKeyboard) {
+        if (mEQwerty == currentKeyboard || mQwertyNum == currentKeyboard || mQwertyNum35 == currentKeyboard) {
             KeyboardLogPrint.e("skkimmm shift handleShift currentKeyboard is qwerty");
             // Alphabet keyboard
 //            if ( mShiftState == SHIFT_STATE_LOWER_CASE || mShiftState == SHIFT_STATE_ONLY_UPPER_CASE ) // 0일 경우 소문자 -> 대문자 변경, 2일 경우 대문자 -> 소문자 변경, 1일 경우에는 대문자 -> 대문자 고정이므로 shift 되지 않음
@@ -4443,7 +4682,7 @@ mKeyboardActiveCount++;
             int ret = kauto.DoAutomata((char) primaryCode, keyState);
             if (mMainKeyboardView != null) {
                 Keyboard keyboard = mMainKeyboardView.getKeyboard();
-                if (isChunjiinKeyboard() || keyboard == mDanKeyboard) {
+                if (isChunjiinKeyboard() || keyboard == mDanKeyboard || keyboard == mDanKeyboard35) {
                     KeyboardLogPrint.w("timer start");
                     if (mCompleteHandler != null) {
                         mCompleteHandler.sendEmptyMessage(START_COMPLETE_TIMER);
@@ -4611,8 +4850,9 @@ mKeyboardActiveCount++;
                 KeyboardLogPrint.d("skkim null mComposing 12 :: " + mComposing.toString());
                 inputConnection.setComposingText(mComposing, 1);
             }
-            if ((mMainKeyboardView.getKeyboard() == mQwerty && mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)
-                    || (mMainKeyboardView.getKeyboard() == mQwertyNum && mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)) {
+            if ((mMainKeyboardView.getKeyboard() == mEQwerty && mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)
+                    || (mMainKeyboardView.getKeyboard() == mQwertyNum && mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)
+                    || (mMainKeyboardView.getKeyboard() == mQwertyNum35 && mShiftState == SHIFT_STATE_ONLY_UPPER_CASE)) {
 
             } else {
                 updateShiftKeyState(getCurrentInputEditorInfo(), 7); // handleCharactor alphabet, 쿼티 영문키보드가 아니고 대문자 고정이아닐 경우
@@ -4776,6 +5016,12 @@ mKeyboardActiveCount++;
                     } else if (mMainKeyboardView.getKeyboard() == mQSymbolsKeyboard1) {
                         setKeyBoardMode(false, -1, 8);
                         mMainKeyboardView.setKeyboard(mQSymbolsKeyboard);
+                    } else if (mMainKeyboardView.getKeyboard() == mQSymbolsKeyboard_35) {
+                        setKeyBoardMode(false, -1, 7);
+                        mMainKeyboardView.setKeyboard(mQSymbolsKeyboard1_35);
+                    } else if (mMainKeyboardView.getKeyboard() == mQSymbolsKeyboard1_35) {
+                        setKeyBoardMode(false, -1, 8);
+                        mMainKeyboardView.setKeyboard(mQSymbolsKeyboard_35);
                     }
                 } else if (primaryCode == -226) {
                     if (mMainKeyboardView.getKeyboard() == mSejongPlusKeyboard) {
@@ -4801,9 +5047,14 @@ mKeyboardActiveCount++;
                     KeyboardLogPrint.d("skkim null commitText 22 :: \u263A");
                     inputConnection.commitText("\u263A", 1);
                 } else {
-                    if (mMainKeyboardView.getKeyboard() == mQwerty || mMainKeyboardView.getKeyboard() == mQwertyNum || mMainKeyboardView.getKeyboard() == mQKoreanKeyboard) {
+                    if (mMainKeyboardView.getKeyboard() == mEQwerty || mMainKeyboardView.getKeyboard() == mQwertyNum
+                            || mMainKeyboardView.getKeyboard() == mQwertyNum35
+                            || mMainKeyboardView.getKeyboard() == mQKoreanKeyboard
+                            || mMainKeyboardView.getKeyboard() == mQKoreanKeyboard35) {
                         if ((primaryCode >= 48 && primaryCode <= 57) || primaryCode == 34 || primaryCode == 35 || primaryCode == 94 || primaryCode == 126) {
-                            if (mMainKeyboardView.getKeyboard() == mQwerty || mMainKeyboardView.getKeyboard() == mQwertyNum) {
+                            if (mMainKeyboardView.getKeyboard() == mEQwerty
+                                    || mMainKeyboardView.getKeyboard() == mQwertyNum
+                                    || mMainKeyboardView.getKeyboard() == mQwertyNum35) {
                                 if (mShiftState == SHIFT_STATE_LOWER_CASE || mShiftState == SHIFT_STATE_UPPER_CASE) {
                                     KeyboardLogPrint.e("handleCharactor alphabet 아니고 키보드가 그외 어떤 상황에서인지 쿼티, 쿼티 한글인 경우이면서 글자키 인 경우, shift state 가 대문 혹은 소문자");
                                     updateShiftKeyState(getCurrentInputEditorInfo(), 8); // handleCharactor alphabet 아니고 키보드가 그외 어떤 상황에서인지 쿼티, 쿼티 한글인 경우이면서 글자키 인 경우
@@ -4908,7 +5159,7 @@ mKeyboardActiveCount++;
 
     public void onPress(int primaryCode) {
         KeyboardLogPrint.w("skkim checkTime onPress primaryCode **************************  :: " + primaryCode);
-        if ( primaryCode == 0 )
+        if (primaryCode == 0 || primaryCode == -8080 || primaryCode == -8081)
             return;
         if ((primaryCode == -2 || primaryCode == -6
 //                || primaryCode == -226
@@ -5067,6 +5318,8 @@ mKeyboardActiveCount++;
                 // keyboard view를 새로 생성하지 않으면 호출될떄마다 key height 값이 계속 작아짐, onInitializeInterface 를호출하면 호출하자마자 바로 finish 되서 사용할 수 없음
                 mQSymbolsKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_1); // 쿼티용 기호
                 mQSymbolsKeyboard1 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_2); // 쿼티용 기호 shift
+                mQSymbolsKeyboard_35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_1_35); // 쿼티용 기호
+                mQSymbolsKeyboard1_35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_2_35); // 쿼티용 기호 shift
                 mSymbolsKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbols); // 기호
                 mNumberKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_number); // 기호 SHIFT
                 mNumberOnlyKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_number_only); // mumber only
@@ -5096,24 +5349,39 @@ mKeyboardActiveCount++;
                 boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
                 if (isQwertyNumSet) {
                     mQwertyNum = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+                    mQwertyNum35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n_35);
                     mQwerty = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty);
+                    mQwerty35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_35);
                     mQKoreanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean_n); // 한글
 //                    mKoreanShiftedKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_n_korean_shifted, true); // 한글 SHIFT
                     mSejongKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong); // 천지인 keyboard
                     mDanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan); // 단모음 keyboard
+                    mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
                     mNaraKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_nara); // 나랏글 keyboard
                     mSejongPlusKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong_plus); // 천지인 플러스 keyboard
                 } else {
                     mQwerty = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty); // 영문 쿼티
+                    mQwerty35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_35);
                     mQwertyNum = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
                     mQKoreanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean); // 한글
+                    mQwertyNum = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+                    mQwertyNum35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n_35);
 //                    mKoreanShiftedKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean_shifted, true); // 한글 SHIFT
                     mSejongKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong); // 천지인 keyboard
                     mDanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan); // 단모음 keyboard
+                    mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
                     mNaraKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_nara); // 나랏글 keyboard
                     mSejongPlusKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong_plus); // 천지인 플러스 keyboard
                 }
-
+                WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                int currentRatation = windowService.getDefaultDisplay().getRotation();
+                if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                    if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                        mEQwerty = mQwerty35;
+                    } else
+                        mEQwerty = mQwerty;
+                } else
+                    mEQwerty = mQwerty;
                 mEmojiKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_emoji);
                 mEmoticonKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_emoticon);
 
@@ -5165,6 +5433,8 @@ mKeyboardActiveCount++;
 
                     mQSymbolsKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_1); // 쿼티용 기호
                     mQSymbolsKeyboard1 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_2); // 쿼티용 기호 shift
+                    mQSymbolsKeyboard_35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_1_35); // 쿼티용 기호
+                    mQSymbolsKeyboard1_35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbol_q_2_35); // 쿼티용 기호 shift
                     mSymbolsKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_symbols); // 기호
                     mNumberKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_number); // 기호 SHIFT
                     mNumberOnlyKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_number_only); // mumber only
@@ -5178,23 +5448,38 @@ mKeyboardActiveCount++;
                     boolean isQwertyNumSet = SharedPreference.getBoolean(getApplicationContext(), Common.PREF_QWERTY_NUM_SETTING);
                     if (isQwertyNumSet) {
                         mQwertyNum = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+                        mQwertyNum35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n_35);
                         mQwerty = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty);
+                        mQwerty35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_35);
                         mQKoreanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean_n); // 한글
 //                    mKoreanShiftedKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_n_korean_shifted, true); // 한글 SHIFT
                         mSejongKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong); // 천지인 keyboard
                         mDanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan); // 단모음 keyboard
+                        mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
                         mNaraKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_nara); // 나랏글 keyboard
                         mSejongPlusKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong_plus); // 천지인 플러스 keyboard
                     } else {
                         mQwerty = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty); // 영문 쿼티
+                        mQwerty35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_35);
                         mQwertyNum = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n); // 영문 쿼티 + 숫자
+                        mQwertyNum35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_qwerty_n_35);
                         mQKoreanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean); // 한글
 //                    mKoreanShiftedKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_korean_shifted, true); // 한글 SHIFT
                         mSejongKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong); // 천지인 keyboard
                         mDanKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan); // 단모음 keyboard
+                        mDanKeyboard35 = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_dan_35); // 단모음 keyboard
                         mNaraKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_nara); // 나랏글 keyboard
                         mSejongPlusKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_sejong_plus); // 천지인 플러스 keyboard
                     }
+                    WindowManager windowService = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                    int currentRatation = windowService.getDefaultDisplay().getRotation();
+                    if (Surface.ROTATION_90 == currentRatation || Surface.ROTATION_270 == currentRatation) {
+                        if ( Build.VERSION.SDK_INT == Build.VERSION_CODES.VANILLA_ICE_CREAM ) {
+                            mEQwerty = mQwerty35;
+                        } else
+                            mEQwerty = mQwerty;
+                    } else
+                        mEQwerty = mQwerty;
 
                     mEmojiKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_emoji);
                     mEmoticonKeyboard = new LatinKeyboard(getApplicationContext(), R.xml.aikbd_emoticon);
@@ -5399,10 +5684,14 @@ mKeyboardActiveCount++;
     private void setKeyHeight(float val) {
         LogPrint.d("keyboard_height SoftKeyboard setKeyHeight fLevel :: " + val);
         adjustKeyboardKeyHeight(mQwerty, val);
+        adjustKeyboardKeyHeight(mQwerty35, val);
         adjustKeyboardKeyHeight(mQwertyNum, val);
+        adjustKeyboardKeyHeight(mQwertyNum35, val);
         adjustKeyboardKeyHeight(mSymbolsKeyboard, val);
         adjustKeyboardKeyHeight(mQSymbolsKeyboard, val);
         adjustKeyboardKeyHeight(mQSymbolsKeyboard1, val);
+        adjustKeyboardKeyHeight(mQSymbolsKeyboard_35, val);
+        adjustKeyboardKeyHeight(mQSymbolsKeyboard1_35, val);
         adjustKeyboardKeyHeight(mNumberKeyboard, val);
         adjustKeyboardKeyHeight(mNumberOnlyKeyboard, val);
         adjustKeyboardKeyHeight(mNumberSignedKeyboard, val);
@@ -5412,9 +5701,11 @@ mKeyboardActiveCount++;
         adjustKeyboardKeyHeight(mSymbolsShiftedKeyboard, val);
         adjustKeyboardKeyHeight(mSymbolsShiftedKeyboard1, val);
         adjustKeyboardKeyHeight(mQKoreanKeyboard, val);
+        adjustKeyboardKeyHeight(mQKoreanKeyboard35, val);
 //        adjustKeyboardKeyHeight(mKoreanShiftedKeyboard, val);
         adjustKeyboardKeyHeight(mSejongKeyboard, val);
         adjustKeyboardKeyHeight(mDanKeyboard, val);
+        adjustKeyboardKeyHeight(mDanKeyboard35, val);
         adjustKeyboardKeyHeight(mNaraKeyboard, val);
         adjustKeyboardKeyHeight(mEmojiKeyboard, val);
         adjustKeyboardKeyHeight(mEmoticonKeyboard, val);
@@ -6502,6 +6793,7 @@ mKeyboardActiveCount++;
         }
         LogPrint.d("isReload :: " + isReload);
         if (!isReload) {
+            // 현재 사용하지 않는 블럭
             MobonUtils.getADID(getApplicationContext());
             MobonSimpleSDK sdk = new MobonSimpleSDK(getApplicationContext(), "okaycashbag");
             //MobonSimpleSDK sdk = MobonSimpleSDK.get(getApplicationContext());
