@@ -63,7 +63,7 @@ public class CustomAsyncTask {
     public static final String GUBUN_DEV = "DEV";
     public static final String GUBUN_ALPHA = "ALPHA";
     public static final String GUBUN_RELEASE = "RELEASE";
-    public static String gubun = "ALPHA";
+    public static String gubun = GUBUN_ALPHA;
     private final int MODE_IMAGE_SEARCH = 10;
     private final int MODE_EMOJI_MATCHING = 20;
     private final int MODE_KEYBOARD_AD = 30;

@@ -10,7 +10,7 @@ public class LogPrint {
     private static final String TAG = "CashKeyboard";
     public static boolean debug = false;
     public static boolean log_debug = false;
-    public static boolean flag = false;
+    public static boolean flag = true;
     public static void e(String str)
     {
         if ( flag )

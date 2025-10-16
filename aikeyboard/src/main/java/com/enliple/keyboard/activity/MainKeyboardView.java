@@ -4151,7 +4151,7 @@ return true;
             @Override
             public void onClick(View view) {
                 try {
-                    String url = "ocbt://com.skmc.okcashbag.home_google/detail/event?title=쇼핑적립&url=https://webview.okcashbag.com/v1.0/shopping/newlist.html";
+                    String url = "ocbt://com.skmc.okcashbag.home_google/detail/event?title=%EC%87%BC%ED%95%91%EC%A0%81%EB%A6%BD&url=https%3A%2F%2Fshopping.wezuro.co.kr%3F_source%3Docb%3A%3Aapp%3A%3Akeyboard";
                     if (olabang_layer.getVisibility() == View.VISIBLE) {
                         setRake("/keyboard/olive", "bottom_tap.viewmore");
                         //url = "ocbt://com.skmc.okcashbag.home_google/detail/event?url=https%3A%2F%2Fwebview.okcashbag.com%2Fv1.0%2Folabang%2Findex.html&title=%EC%98%A4!%EB%9D%BC%EB%B0%A9";
